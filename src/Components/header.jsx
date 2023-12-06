@@ -1,8 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../Styles/Header.css"
 
 const Header = () => {  
+const [userContent, setUserContent] = useState(false)
+const [userRegister, setUserRegister] = useState(false)
 
+
+
+
+    // const userBtn = document.querySelector("#user-icon");
+    // const liencreate = document.querySelector("#create");
+    // const userContentRegister = document.querySelector('.user-container-register');
+    // const connect = document.querySelector("#connexion")
+    
+    
+    // userBtn.addEventListener("click", ()=>{
+    //     userContent.classList.toggle("active")
+    //     userContentRegister.classList.remove("active")
+    // });
+    
+    // liencreate.addEventListener("click", ()=>{
+    //     userContentRegister.classList.toggle("active")
+    //     userContent.classList.remove("active")
+    // });
+    
+    // connect.addEventListener("click", ()=>{
+    //     userContent.classList.toggle("active")
+    //     userContentRegister.classList.remove("active")
+    // })
+    
+    
 
     return (
         <>
@@ -22,17 +49,23 @@ const Header = () => {
                         <a href="#">RÉSERVER</a>
                         <a href="#">CONTACT</a>
                         <button className="btnLogin-popup">DOMICILE</button>
-                        <i id="user-icon" className='bx bxs-user bx-md'></i>
+                        <i id="user-icon" className='bx bxs-user bx-md'onClick={()=>{
+                            setUserContent(true)
+                            setUserRegister(false)
+                        }}></i>
                         <span>M.NOM</span>
-                        <div className="user-container">
+                        <div className={userContent==true?`user-container active`:`user-container`}>
                             <h2>Connectez-vous</h2>
                             <input type="email" placeholder="E-mail" />
                             <input type="password" placeholder="Mot de passe" />
                             <input className="btn-user" type="submit" value="Connexion" />
                             <p>Mot de passe oublié ? <a href="#">Redefinir mot de passe</a></p>
-                            <p>Pas de compte ? <a href="#" id="create">Créer un compte</a></p>
+                            <p>Pas de compte ? <a href="#" id="create" onClick={()=>{
+                                setUserContent(false)
+                                setUserRegister(true)
+                            }}>Créer un compte</a></p>
                         </div>
-                        <div className="user-container-register">
+                        <div className={userRegister==true?`user-container-register active`:`user-container-register`}>
                             <h2>Inscrivez-vous</h2>
                             <input type="email" placeholder="E-mail" />
                             <input type="password" placeholder="Mot de passe" />
@@ -42,11 +75,15 @@ const Header = () => {
                             <input type="number" placeholder="Numéro de téléphone" />
                             <input className="btn-user" type="submit" value="S'inscrire" />
                             <p>Mot de passe oublié ? <a href="#">Redefinir mot de passe</a></p>
-                            <p>Déjà un compte ? <a href="#" id="connexion">Ce Connecter</a></p>
+                            <p>Déjà un compte ? <a href="#" id="connexion" onClick={()=>{
+                                setUserContent(true)
+                                setUserRegister(false)
+                            }}>Ce Connecter</a></p>
                         </div>
                     </nav>
                     <i className='bx bxs-cog'></i>
                 </header>
+                <script type="module" src="./script.js"></script>
             </body>
 
         </>
