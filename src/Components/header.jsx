@@ -1,7 +1,9 @@
 import React from 'react';
 import "../Styles/Header.css"
 
-const Header = () => {
+const Header = () => {  
+
+
     return (
         <>
             <head>
@@ -13,7 +15,7 @@ const Header = () => {
             <body>
                 {/* Header menu avec bouton Login */}
                 <header>
-                    <a href="#"><img src={process.env.PUBLIC_URL + "/Assets/logo_site.png"} alt="" /></a>
+                <a href="#"><img src={process.env.PUBLIC_URL + "/Assets/logo_site.png"} alt="" /></a>
                     <nav className="navigation">
                         <a href="#">ACCUEIL</a>
                         <a href="#">TARIF</a>
@@ -45,7 +47,6 @@ const Header = () => {
                     </nav>
                     <i className='bx bxs-cog'></i>
                 </header>
-                <script src="../Scripts/header.js"></script>
             </body>
 
         </>

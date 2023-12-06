@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    border: none;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+html::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--bouton-hover);
+    border-radius: 3rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--background-noir);
+}
+:root{
+    --background : #EEEEEE;
+    --background-noir : #212121;
+    --bouton : #FF3838;
+    --bouton-hover : #c32626;
+    --text-gris: #333;
+    --text-blanc: #FFFFFF;    
+}
+
+footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+    gap: 1.5rem;
+    color: var(--text-blanc);
+    background: var(--background-noir);
+    padding: 50px 20px;
+}
+
+footer .social {
+    margin-top: 0.5rem;
+    display: flex;
+    column-gap: .5rem;
+}
+
+footer .social .bx {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bouton);
+    transition: background .2s ease-in-out;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+footer .social .bx:hover {
+    background: var(--bouton-hover);
+}
+
+footer h2 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+footer a {
+    color: var(--bouton);
+}
+
+footer a:hover {
+    color: var(--bouton-hover);
+}
+
+footer img {
+    width: 50px;
+}
+
+.copy {
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 13px;
+    background: var(--text-blanc);
+}
