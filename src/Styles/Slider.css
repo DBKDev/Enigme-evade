@@ -9,7 +9,8 @@
 .swiper {
     display: block;
     width: 100%;
-    height: 40rem;
+    height: 35rem;
+    margin-top: 2%;
   }
 
   .swiper-slide {
