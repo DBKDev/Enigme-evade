@@ -8,6 +8,7 @@ import PageContact from "./Views/PageContact";
 import Modal from 'react-modal';
 import DevisProfessionnel from "./Views/DevisProfessionnel";
 import ReservationSite from "./Views/ReservationSite";
+import MonCompte from "./Views/MonCompte";
 
 // Définir l'élément racine de votre application pour le composant Modal
 Modal.setAppElement('#root');
@@ -19,13 +20,14 @@ function App() {
   return <>
   
     <BrowserRouter>  
-      <Header/>  
+      {/* <Header/>   */}
       <Routes>
-
+        <Route path="/"  element={<PageAccueil/>}/>
         <Route path={"/contact"} element={<PageContact/>} />
         <Route path={"/map"} element={<Map/>} />
         <Route path={"/devisPro"} element={<DevisProfessionnel/>} />
         <Route path={"/ReservationSite"} element={<ReservationSite/>}/>
+        <Route path={"/monCompte"} element={<MonCompte/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
