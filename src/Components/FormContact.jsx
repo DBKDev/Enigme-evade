@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../Styles/FormContact.css'
-import Header from '../Components/Header';
+import Header from './Header';
 import contactService from '../Services/contactService';
 import axios from 'axios';
 import Modal from 'react-modal';
