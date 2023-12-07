@@ -6,8 +6,6 @@ import Modal from 'react-modal';
 import DevisProfessionnel from "./Views/DevisProfessionnel";
 import ReservationSite from "./Views/ReservationSite";
 import MonCompte from "./Views/MonCompte";
-import DevisProfessionnel from "./Views/DevisProfessionnel";
-import ReservationSite from "./Views/ReservationSite";
 import PageDomicile from "./Views/PageDomicile";
 
 // Définir l'élément racine de votre application pour le composant Modal

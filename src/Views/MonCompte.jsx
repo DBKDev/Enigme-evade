@@ -1,9 +1,13 @@
 import React from 'react';
 import '../Styles/MonCompte.css'
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
 
 const MonCompte = () => {
     return (
         <>
+
+        <Header/>
             <div className='containerprincipaleMonCompte'>
             <div className='monCompteMargin'>
                 <h2>Mon Compte</h2>
@@ -29,6 +33,7 @@ const MonCompte = () => {
                 </div>
             </div>
             </div>
+            <Footer/>
         </>
     );
 }

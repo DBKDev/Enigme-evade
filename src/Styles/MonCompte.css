@@ -35,22 +35,23 @@ html::-webkit-scrollbar-track {
 }
 /* DIV qui contient tous  */
 .containerprincipaleMonCompte{
-    width: 95%;
+    width: 70%;
     height: auto;
     margin: 20px auto;
+    margin-top: 9rem;
 }
 .monCompteMargin h2{
     padding: 10px;
-    font-size: 300%;
+    font-size: 250%;
     font-weight: regular;
 }
 .monCompteMargin p{
     margin-left: 88%;
-    font-size: 200%;
+    font-size: 140%;
 }
 .MonCompteSouligne{
-    width: 390px;
-    height: 0.6rem;
+    width: 350px;
+    height: 0.4rem;
     background: var(--bouton);
     margin-left: 10px;
     margin-bottom: 20px;
@@ -58,53 +59,50 @@ html::-webkit-scrollbar-track {
 .MonCompteContainer{
     display: flex;
     flex-flow: row nowrap;
-    border: 3px solid black;
+    border: 2px solid black;
     width: 100%;
 }
-/* .formulaireMonCompte{
-    margin-right: 40%;
-} */
+
 .MonCompteFlex{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    width: 60%;
+    width: 50%;
     padding: 10px 20px;
 }
 .MonCompteFlex *{
-    width: 100%;
-    /* height: 65px; */
-    font-size: 180%;
+    width: 80%;
+    font-size: 100%;
     border-radius: 8px;
 }
 .MonCompteFlex input{
     background-color: #c9c8c8;
     margin: 15px;
-    height: 65px;
+    height: 45px;
 }
 .MonCompteFlex input[value='MODIFIER MES INFOS']{
     background: var(--bouton);
     padding: 1px ;
-    width: 75%;
-    height: 65px !important;
+    width: 35%;
+    height: 45px !important;
     color: var(--text-blanc);
     border-radius: 8px;
     cursor: pointer;
-    font-size: 30px !important;
+    font-size: 100%;
     margin-top: 30px;
     margin-bottom: 30px;
 }
 .reservationMonCompte input[value='SUPPRIMER MON COMPTE']{
     background: var(--bouton);
     padding: 1px ;
-    width: 75%;
-    height: 65px;
+    width: 67%;
+    height: 45px;
     color: var(--text-blanc);
     border-radius: 8px;
     cursor: pointer;
-    font-size: 180%;
+    font-size: 100%;
     margin-bottom: 10px;
     margin-top: 22%;
 }
@@ -114,25 +112,26 @@ html::-webkit-scrollbar-track {
     align-items: center;
     /* justify-content: space-evenly; */
     width: 30%;
-    margin-left: 20%;
+    margin-left: 14%;
     height: auto;
+    margin-right: 20px;
 }
 .reservationMonCompte .info-resa{
     width: 75%;
-    height: 35%;
+    height: 30%;
     background-color: #c9c8c8;
 }
 .reservationMonCompte h3{
     margin: 40px 20px 20px;
     align-self: center;
-    font-size: 190%;
+    font-size: 130%;
 }
 .reservationMonCompte button {
-    width: 30%;
-    height: 65px;
+    width: 25%;
+    height: 45px;
     background: var(--bouton);
     color: var(--text-blanc);
-    font-size: 180%;
+    font-size: 100%;
     border-radius: 8px;
     margin-top: 30px;
 }
