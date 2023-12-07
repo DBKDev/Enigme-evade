@@ -48,7 +48,7 @@ const [userRegister, setUserRegister] = useState(false)
                         <a href="#">ACCUEIL</a>
                         <a href="#">TARIF</a>
                         <a href="#">RÉSERVER</a>
-                        <a href="#">CONTACT</a>
+                        <a href="/contact">CONTACT</a>
                         <button className="btnLogin-popup">DOMICILE</button>
                         <i id="user-icon" className='bx bxs-user bx-md'onClick={()=>{
                             // Toggle the value of userContent
