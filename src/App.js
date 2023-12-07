@@ -19,13 +19,11 @@ function App() {
   return <>
   
     <BrowserRouter>  
-      {/* <Header/>   */}
       <Routes>
         <Route path={"/"} element={<PageAccueil/>} />
-        <Route path="/"  element={<PageAccueil/>}/>
         <Route path={"/contact"} element={<PageContact/>} />
         <Route path={"/map"} element={<Map/>} />
-        <Route path={"/devisPro"} element={<DevisProfessionnel/>} />
+        <Route path={"/devisPro"} element={<DevisProfessionnel/>}/>
         <Route path={"/ReservationSite"} element={<ReservationSite/>}/>
         <Route path={"/Domicile"} element={<PageDomicile/>}/>
         <Route path={"/monCompte"} element={<MonCompte/>}/>
