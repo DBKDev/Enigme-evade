@@ -10,17 +10,22 @@ import Modal from 'react-modal';
 Modal.setAppElement('#root');
 
 
+import DevisProfessionnel from "./Views/DevisProfessionnel";
+import ReservationSite from "./Views/ReservationSite";
 
 function App() {
   return <>
   
-    <BrowserRouter>    
+    <BrowserRouter>  
+      <Header/>  
       <Routes>
 
         <Route path={"/contact"} element={<PageContact/>} />
         <Route path={"/map"} element={<Map/>} />
+        <Route path={"/devisPro"} element={<DevisProfessionnel/>} />
+        <Route path={"/ReservationSite"} element={<ReservationSite/>}/>
       </Routes>
-      {/* <Footer/> */}
+      <Footer/>
     </BrowserRouter>
 
   </>
