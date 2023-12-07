@@ -1,9 +1,11 @@
 import React from 'react';
 import '../Styles/DevisPro.css'
+import Footer from '../Components/Footer';
+import Header from '../Components/Header';
 
 const DevisProfessionnel = () => {
     return (<>
-    
+    <Header />
         <div className='divProMargin'>
             <h2>DEVIS PROFESSIONNELS</h2>
             <div className='devisProSouligne'></div>
@@ -44,6 +46,7 @@ const DevisProfessionnel = () => {
             <input type="submit" value={'ENVOYER'} />
         </form>
         </div>
+        <Footer />
     </>);
 }
  
