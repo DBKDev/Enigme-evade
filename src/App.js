@@ -1,16 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Slideaccueil from "./Components/Slideraccueil";
+import PageAccueil from "./Views/PageAccueil";
 
 function App() {
   return <>
   
     <BrowserRouter>    
       <Routes>
-        <Route path={"/"} element={<Header/>} />
+        <Route path={"/"} element={<PageAccueil/>} />
       </Routes>
-      <Slideaccueil/>
       {/* <Footer/> */}
     </BrowserRouter>
 

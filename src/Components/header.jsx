@@ -40,7 +40,7 @@ const [userRegister, setUserRegister] = useState(false)
                 <title>Document</title>
             </head>
             <body>
-                {/* Header menu avec bouton Login */}
+                {/* Header menu avec bouton Login */}                
                 <header>
                 <a href="#"><img src={process.env.PUBLIC_URL + "/Assets/logo_site.png"} alt="" /></a>
                     <nav className="navigation">
