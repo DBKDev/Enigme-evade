@@ -62,7 +62,7 @@ header img{
     user-select: none;
 }
 
-.navigation a {
+.navigation .laclasse-a {
     position: relative;
     font-size: 1.4em;
     color: #fff;
@@ -71,7 +71,7 @@ header img{
     margin-left: 40px;
 }
 
-.navigation .btnLogin-popup {
+.navigation .btnLogin-popup{
     width: 130px;
     height: 50px;
     background: var(--bouton);
@@ -86,7 +86,11 @@ header img{
     color: var(--text-blanc);
 }
 
-.navigation a::after{
+.laclasse-btn-a{
+    color: var(--text-blanc);
+}
+
+.navigation .laclasse-a::after{
     content: '';
     position: absolute;
     left: 0;
@@ -100,7 +104,7 @@ header img{
     transition: transform .5s;
 }
 
-.navigation a:hover::after{
+.navigation .laclasse-a:hover::after{
     transform: scaleX(1);
     transform-origin: left;
 }
@@ -132,7 +136,7 @@ header img{
     left: 10px;
 }
 
-.navigation a:focus{
+.navigation .laclasse-a:focus{
     color: var(--bouton-hover);
 }
 
@@ -196,13 +200,13 @@ header .bx{
     background: var(--bouton-hover);
 }
 
-.user-container p a {
+.user-container p .laclasse-a {
     color: var(--bouton);
     text-decoration: underline;
     font-size: 1rem;
 }
 
-.user-container p a:hover {
+.user-container p .laclasse-a:hover {
     color: var(--bouton-hover);
 }
 
@@ -259,13 +263,13 @@ header .bx{
     background: var(--bouton-hover);
 }
 
-.user-container-register p a {
+.user-container-register p .laclasse-a {
     color: var(--bouton);
     text-decoration: underline;
     font-size: 1rem;
 }
 
-.user-container-register p a:hover {
+.user-container-register p .laclasse-a:hover {
     color: var(--bouton-hover);
 }
 

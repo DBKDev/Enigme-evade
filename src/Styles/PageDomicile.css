@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    border: none;
+    scroll-behavior: smooth;
+    user-select: none;    
+}
+
+html::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--bouton-hover);
+    border-radius: 3rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--background-noir);
+}
+:root {
+    --background: #EEEEEE;
+    --background-noir: #212121;
+    --bouton: #FF3838;
+    --bouton-hover: #c32626;
+    --text-gris: #333333;
+    --text-blanc: #FFFFFF;
+}
+
+/* Une activité ouvert à tous */
+
+.domicile-tous{
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    background: var(--background);
+    justify-content: center;
+    height: 80px;
+    margin-top: 2rem;
+}
+
+.domicile-tous .domicile-tous-infos{
+    position: relative;
+    top: 3rem;
+    color: var(--text-gris);
+    font-weight: 700;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.domicile-tous .domicile-tous-barre{
+    position: relative;
+    margin: 0 auto;
+    top: 3rem;
+    width: 90%;
+    height: 0.8rem;
+    background: var(--bouton);
+}
+
+.domicile-tous-card{
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    background: var(--background);
+    padding: 20px 100px;
+    margin-bottom: 5rem;
+}
+
+.domicile-tous-card .domicile-tous-text{  
+    margin: 0 auto;
+    width: 40%;
+    margin-top: 3rem;
+    color: var(--text-gris);
+    text-align: center;
+    font-family: Poppins;
+    line-height: normal;
+}
+
+
+.domicile-espace-card{   
+    margin-top: 5rem;
+ }
+ 
+ .domicile-tous-icon{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-evenly;
+     
+ }
+ 
+ .domicile-tous-icon img{
+     width: 12rem;
+     
+ }
+ .domicile-tous-icon {
+    text-align: center;
+ }
+ 
+ .domicile-tous-icon .domicile-nbpers-tous {
+     font-size: 1.6rem;
+     font-weight: 700;
+     text-align: center;
+     color: var(--bouton);
+ }
+ 
+ .domicile-tous-icon .domicile-prixpers-tous{
+     font-size: 1.1rem;
+     max-width: 20rem;
+     font-weight: 700;
+     text-align: center;
+     color: var(--text-gris);
+ }
+ 
+
+ 
+.domicile-escape-tarif{
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    background: var(--background-noir);
+    justify-content: center;
+    height: 80px;
+}
+
+.domicile-escape-tarif .domicile-tarif-infos{
+    position: relative;
+    top: 3rem;
+    color: var(--text-blanc);
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+.domicile-escape-tarif .domicile-tarif-barre{
+    position: relative;
+    margin: 0 auto;
+    top: 3rem;
+    width: 90%;
+    height: 0.8rem;
+    background: var(--bouton);
+}
+
+
+
+/* Titre tarif */
+.domicilet-escape-tarif{
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    background: var(--background-noir);
+    justify-content: center;
+    height: 80px;
+}
+
+.domicilet-escape-tarif .domicilet-tarif-infos{
+    position: relative;
+    top: 3rem;
+    color: var(--text-blanc);
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+.domicilet-escape-tarif .domicilet-tarif-barre{
+    position: relative;
+    margin: 0 auto;
+    top: 3rem;
+    width: 90%;
+    height: 0.8rem;
+    background: var(--bouton);
+}
+/* Partie du text Tarif */
+.domicilet-tarif-card{
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    background: var(--background-noir);
+    padding: 20px 100px;
+}
+
+.domicilet-tarif-card .domicilet-tarif-text{  
+    margin: 0 auto;
+    width: 40%;
+    margin-top: 3rem;
+    color: var(--text-blanc);
+    text-align: center;
+    font-family: Poppins;
+    line-height: normal;
+}
+
+/* Icon + prix Tarif */
+
+.domicilet-espace-card{   
+   margin-top: 5rem;
+}
+
+.domicilet-taris-icon{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.domicilet-taris-icon img{
+    width: 12rem;
+}
+
+.domicilet-taris-icon .domicilet-nbpers-tarif {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-blanc);
+}
+
+.domicilet-taris-icon .domicilet-prixpers-tarif{
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--bouton);
+}
+
+
+.domicile-btn-reserver{
+    background: var(--bouton);
+    border-radius: 8px;
+    width: 140px;
+    height: 40px;
+    color: var(--text-blanc);
+    text-align: center;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.domicileacti-nbpers-tous{
+    color: var(--bouton);
+text-align: center;
+font-family: Poppins;
+font-size: 2rem;
+font-style: normal;
+font-weight: 800;
+line-height: normal
+}
+
+.domicile-btn-reserver:hover{
+    background: var(--bouton-hover);
+}
+
+
+/* Titre Pro*/
+
+
+.domicile-pro-tous{
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+    height: 80px;
+    background: var(--background-noir);
+}
+
+.domicile-pro-tous .domicile-pro-tous-infos{
+    position: relative;
+    top: 2rem;
+    color: var(--text-blanc);
+    font-weight: 700;
+    font-size: 2.2rem;
+    text-align: center;
+    
+}
+
+.domicile-pro-tous .domicile-pro-tous-barre{
+    position: relative;
+    margin: 0 auto;
+    top: 2rem;
+    width: 90%;
+    height: 0.8rem;
+    background: var(--bouton);
+}
+
+.domicile-pro-tous-card{
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    background: var(--background-noir);
+    padding: 20px 100px;
+    margin-bottom: 5rem;
+}
+
+.domicile-pro-tous-card .domicile-pro-tous-text{  
+    margin: 0 auto;
+    width: 55%;
+    margin-top: 2rem;
+    color: var(--text-blanc);
+    text-align: center;
+    font-family: Poppins;
+    line-height: normal;
+}
+
+
+.domicile-pro-espace-card{   
+    margin-top: 5rem;
+ }
+ 
+ .domicile-btn-devis{
+    margin-bottom: 4rem;
+ }
+ .domicile-btn-devis{
+    background: var(--bouton);
+    border-radius: 8px;
+    width: 140px;
+    height: 40px;
+    color: var(--text-blanc);
+    text-align: center;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+.domicile-btn-devis:hover{
+    background: var(--bouton-hover);
+}
