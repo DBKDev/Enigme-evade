@@ -1,0 +1,42 @@
+:root{
+  --background : #EEEEEE;
+  --background-noir : #212121;
+  --bouton : #FF3838;
+  --bouton-hover : #c32626;
+  --text-gris: #333333;
+  --text-blanc: #FFFFFF;    
+}
+.swiper {
+    display: block;
+    width: 100%;
+    height: 35rem;
+    margin-top: 2%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: var(--background-noir);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper-slide img{
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-button-next,
+.swiper-button-prev {
+    color: var(--bouton) !important;
+}

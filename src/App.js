@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import Slideaccueil from "./Components/Slideraccueil";
+import PageAccueil from "./Views/PageAccueil";
 import Map from "./Components/Map";
 import FormContact from "./Components/FormContact";
 import PageContact from "./Views/PageContact";
