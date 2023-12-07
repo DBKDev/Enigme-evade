@@ -5,13 +5,14 @@ import Map from "./Components/Map";
 import FormContact from "./Components/FormContact";
 import PageContact from "./Views/PageContact";
 import Modal from 'react-modal';
+import DevisProfessionnel from "./Views/DevisProfessionnel";
+import ReservationSite from "./Views/ReservationSite";
 
 // Définir l'élément racine de votre application pour le composant Modal
 Modal.setAppElement('#root');
 
 
-import DevisProfessionnel from "./Views/DevisProfessionnel";
-import ReservationSite from "./Views/ReservationSite";
+
 
 function App() {
   return <>

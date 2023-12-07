@@ -10,7 +10,7 @@ const PageContact = () => {
     </div>
     <Header/>
     <FormContact/>
-    <Footer/>
+
     
 
     </>;
