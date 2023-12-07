@@ -40,8 +40,7 @@ const [userRegister, setUserRegister] = useState(false)
                 <title>Document</title>
             </head>
             <body>
-                {/* Header menu avec bouton Login */}
-                <div className='test'>
+                {/* Header menu avec bouton Login */}                
                 <header>
                 <a href="#"><img src={process.env.PUBLIC_URL + "/Assets/logo_site.png"} alt="" /></a>
                     <nav className="navigation">
@@ -51,11 +50,8 @@ const [userRegister, setUserRegister] = useState(false)
                         <a href="/contact">CONTACT</a>
                         <button className="btnLogin-popup">DOMICILE</button>
                         <i id="user-icon" className='bx bxs-user bx-md'onClick={()=>{
-                            // Toggle the value of userContent
-                    setUserContent(prevUserContent => !prevUserContent);
-
-                    // Always make sure userRegister is set to false when clicking user-icon
-                    setUserRegister(false);
+                            setUserContent(prevUserContent =>!prevUserContent)
+                            setUserRegister(false)
                         }}></i>
                         <span>M.NOM</span>
                         <div className={userContent==true?`user-container active`:`user-container`}>
@@ -86,12 +82,12 @@ const [userRegister, setUserRegister] = useState(false)
                     </nav>
                     <i className='bx bxs-cog'></i>
                 </header>
-                </div>
                 <script type="module" src="./script.js"></script>
             </body>
 
-        </>
+</>
     );
+    
 }
 
 export default Header;
