@@ -74,7 +74,6 @@ const [userRegister, setUserRegister] = useState(false)
                             <input type="text" placeholder="Votre adresse" />
                             <input type="number" placeholder="Numéro de téléphone" />
                             <input className="btn-user" type="submit" value="S'inscrire" />
-                            <p>Mot de passe oublié ? <a href="#">Redefinir mot de passe</a></p>
                             <p>Déjà un compte ? <a href="#" id="connexion" onClick={()=>{
                                 setUserContent(true)
                                 setUserRegister(false)

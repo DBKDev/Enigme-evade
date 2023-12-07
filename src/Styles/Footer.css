@@ -83,7 +83,7 @@ footer img {
 }
 
 .copy {
-    padding: 1rem 0;
+    padding: 0.1rem 0;
     text-align: center;
     font-size: 13px;
     background: var(--text-blanc);
