@@ -85,8 +85,9 @@ const [userRegister, setUserRegister] = useState(false)
                 <script type="module" src="./script.js"></script>
             </body>
 
-        </>
+</>
     );
+    
 }
 
 export default Header;
