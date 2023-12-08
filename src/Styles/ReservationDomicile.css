@@ -45,7 +45,7 @@ html::-webkit-scrollbar-track {
     background: var(--bouton);
     margin: 5px auto;
 }
-.DomicileReservation{
+.divDomicileReservation{
     margin-top: 140px !important;
 }
 .DomicileReservationContainer{
@@ -73,6 +73,10 @@ html::-webkit-scrollbar-track {
     height: 10%;
     padding: 10px;
 }
+.DomicileReservationFlex .agendaDom{
+    width: 62.5%;
+    height: 10%;
+}
 
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -85,7 +89,7 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 128px;
     height: 37px;
     position: absolute;
-    bottom: -13%;
+    bottom: -11.5%;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px ;

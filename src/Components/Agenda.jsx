@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo , useState} from 'react';
 import '@mobiscroll/react/dist/css/mobiscroll.min.css';
 import { Datepicker, setOptions, localeFr } from '@mobiscroll/react';
 import '../Styles/agenda.css'
@@ -20,7 +20,15 @@ function Agenda() {
           end: '24:00' // Heure de fin (minuit)
         }
       ];
+      
     }, []);
+    
+    const [startDate, setStartDate] = useState(null);
+
+    const isWeekday = (date) => {
+      const day = new Date(date).getDay();
+      return day !== 0 && day !== 6; // 0 pour dimanche, 6 pour samedi
+    };
 
   return (
     <Datepicker
@@ -33,6 +41,10 @@ function Agenda() {
       labels={myLabels}
       invalid={myInvalid}
       timeFormat="HH:mm"
+      selected={startDate}
+      onChange={(date) => setStartDate(date)}
+      filterDate={isWeekday}
+      placeholderText="Select a weekday"
     />
   );
 }
