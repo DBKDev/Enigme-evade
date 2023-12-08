@@ -7,6 +7,8 @@ import PageDomicile from "./Views/PageDomicile";
 import MesReservations from "./Views/MesReservations";
 import PageLocalisation from "./Views/PageLocalisation";
 import PageDetails from "./Views/PageDetails";
+import InterfaceAdmin from "./Views/InterfaceAdmin";
+import ReservationDomicile from "./Views/ReservationDomicile";
 import DevisProfessionnel from "./Views/DevisProfessionnel";
 import ReservationSite from "./Views/ReservationSite";
 
@@ -31,6 +33,8 @@ function App() {
         <Route path={"/details"} element={<PageDetails/>}/>
         <Route path={"/Domicile"} element={<PageDomicile/>}/>
         <Route path={"/monCompte"} element={<MonCompte/>}/>
+        <Route path={"/interface"} element={<InterfaceAdmin/>}/>
+        <Route path={"/reservationDomicile"} element={<ReservationDomicile/>}/>
         <Route path={"/MesReservations"} element={<MesReservations/>}/>
       </Routes>
     </BrowserRouter>
