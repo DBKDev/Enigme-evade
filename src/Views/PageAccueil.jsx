@@ -32,16 +32,16 @@ const PageAccueil = () => {
                 </div>
             </div>
             <div className="escape-card">
-                <p className='escape-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                <p className='escape-text-jeu'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Duis in lectus ligula. Donec tincidunt a massa sit amet finibus.
                     Nunc scelerisque aliquet feugiat. Vestibulum nec lectus sed nibh iaculis
                     vehicula vel eu risus. Suspendisse rutrum ac arcu id ultricies.
                     Quisque suscipit diam massa, a placerat tellus varius vel. Sed maximus
                     auctor vestibulum. </p>
-                <div className="espace-card" >
+                <div className="espace-card-jeu" >
                 {images.map((image) => {
                         return (
-                                <img src={process.env.PUBLIC_URL + `/Images/photos_escape/${image.image_nom}.png`} alt={image.alt} width={'300px'} height={'200px'} />
+                                <img src={process.env.PUBLIC_URL + `/Images/photos_escape/${image.image_nom}.png`} alt={image.alt} width={'300px'} height={'200px'} className='img-jeu'/>
                         )
                     })}
 
