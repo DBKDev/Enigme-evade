@@ -78,7 +78,7 @@ const [userRegister, setUserRegister] = useState(false)
                             <p>Déjà un compte ? <a href="#" id="connexion" className='laclasse-a' onClick={()=>{
                                 setUserContent(true)
                                 setUserRegister(false)
-                            }}>Ce Connecter</a></p>
+                            }}>Se Connecter</a></p>
                         </div>
                     </nav>
                     <i className='bx bxs-cog'></i>
