@@ -114,7 +114,7 @@ const PageDomicile = () => {
         <div className="domicile-pro">
             <div className="domicile-pro-tous">
                 <div className='domicile-pro-tous-titre'>
-                    <h1 className="domicile-pro-tous-infos">DÉROULÉ DE L’ACTIVITÉE</h1>
+                    <h1 className="domicile-pro-tous-infos">VOUS ÊTES PROFESSIONNEL</h1>
                     <div className="domicile-pro-tous-barre"></div>
                 </div>
             </div>
