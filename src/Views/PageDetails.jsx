@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const PageDetails = () => {
     return <>
-    <Header />
+    <Header/>
     <DetailsComponent />
     <Footer/>
     
