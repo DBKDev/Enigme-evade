@@ -36,6 +36,7 @@ function App() {
         <Route path={"/interface"} element={<InterfaceAdmin/>}/>
         <Route path={"/reservationDomicile"} element={<ReservationDomicile/>}/>
         <Route path={"/MesReservations"} element={<MesReservations/>}/>
+        <Route path={"/reservationSite"} element={<ReservationSite/>}/>
       </Routes>
     </BrowserRouter>
 
