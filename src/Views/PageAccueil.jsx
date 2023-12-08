@@ -31,7 +31,7 @@ const PageAccueil = () => {
                     <div className="escape-barre"></div>
                 </div>
             </div>
-            <div className="escape-card">
+            <div className="escape-card-jeu">
                 <p className='escape-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Duis in lectus ligula. Donec tincidunt a massa sit amet finibus.
                     Nunc scelerisque aliquet feugiat. Vestibulum nec lectus sed nibh iaculis
@@ -41,7 +41,7 @@ const PageAccueil = () => {
                 <div className="espace-card" >
                 {images.map((image) => {
                         return (
-                                <img src={process.env.PUBLIC_URL + `/Images/photos_escape/${image.image_nom}.png`} alt={image.alt} width={'300px'} height={'200px'} />
+                                <img src={process.env.PUBLIC_URL + `/Images/photos_escape/${image.image_nom}.png`} alt={image.alt} width={'300px'} height={'200px'} className='img-jeu' />
                         )
                     })}
 
@@ -63,7 +63,7 @@ const PageAccueil = () => {
                     vehicula vel eu risus. Suspendisse rutrum ac arcu id ultricies.
                     Quisque suscipit diam massa, a placerat tellus varius vel. Sed maximus
                     auctor vestibulum. </p>
-                <div className="espace-card">
+                <div className="espace-card-tarif">
                     <div className='taris-icon'>
                         <div className="item1"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/3pers.png"} alt="" />
                             <p className='nbpers-tarif'>3 personnes</p>

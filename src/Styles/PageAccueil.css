@@ -73,12 +73,24 @@ html::-webkit-scrollbar-track {
 }
 
 /* Partie des cartes et du text */
-.escape-card {
+.escape-card-jeu {
     margin: 0 auto;
-    width: 90%;
+    width: 80%;
     height: 50rem;
     background: var(--background);
 }
+
+.img-jeu{
+    margin: 30px 10px;
+    box-shadow: 5px 5px 5px #666; 
+    border-radius: 5px;
+}
+
+.img-jeu:hover{
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
 .espace-card{
     display: flex;
     flex-flow: row wrap;
@@ -88,10 +100,11 @@ html::-webkit-scrollbar-track {
 
 .espace-card img{
     margin: 30px 10px;
-    box-shadow: 5px 5px 5px #666;
 }
 
-.escape-card .escape-text {
+
+
+.escape-card-jeu .escape-text {
     position: relative;
     top: 4rem;
     margin: 0 auto;
@@ -152,7 +165,7 @@ html::-webkit-scrollbar-track {
 
 /* Icon + prix Tarif */
 
-.espace-card {
+.espace-card-tarif {
     margin-top: 5rem;
 }
 
