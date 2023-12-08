@@ -32,6 +32,7 @@ function App() {
         <Route path={"/Domicile"} element={<PageDomicile/>}/>
         <Route path={"/monCompte"} element={<MonCompte/>}/>
         <Route path={"/MesReservations"} element={<MesReservations/>}/>
+        <Route path={"/reservationSite"} element={<ReservationSite/>}/>
       </Routes>
     </BrowserRouter>
 
