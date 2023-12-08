@@ -234,7 +234,7 @@ textarea {
 }
 
 .leaflet-tile {
-    filter: grayscale(50);
+    filter: grayscale(100);
 }
 
 
