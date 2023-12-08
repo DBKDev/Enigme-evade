@@ -79,19 +79,21 @@ html::-webkit-scrollbar-track {
     height: 50rem;
     background: var(--background);
 }
-.espace-card{
+.espace-card-jeu{
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
     }
 
-.espace-card img{
+.espace-card-jeu .img-jeu{
+    position: relative;
+    top: 4rem;
     margin: 30px 10px;
     box-shadow: 5px 5px 5px #666;
 }
 
-.escape-card .escape-text {
+.escape-card .escape-text-jeu {
     position: relative;
     top: 4rem;
     margin: 0 auto;
