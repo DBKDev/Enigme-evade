@@ -8,6 +8,8 @@ import MonCompte from "./Views/MonCompte";
 import PageDomicile from "./Views/PageDomicile";
 import PageLocalisation from "./Views/PageLocalisation";
 import PageDetails from "./Views/PageDetails";
+import InterfaceAdmin from "./Views/InterfaceAdmin";
+import ReservationDomicile from "./Views/ReservationDomicile";
 
 // Définir l'élément racine de votre application pour le composant Modal
 Modal.setAppElement('#root');
@@ -30,6 +32,8 @@ function App() {
         <Route path={"/details"} element={<PageDetails/>}/>
         <Route path={"/Domicile"} element={<PageDomicile/>}/>
         <Route path={"/monCompte"} element={<MonCompte/>}/>
+        <Route path={"/interface"} element={<InterfaceAdmin/>}/>
+        <Route path={"/reservationDomicile"} element={<ReservationDomicile/>}/>
       </Routes>
     </BrowserRouter>
 
