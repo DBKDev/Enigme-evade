@@ -1,11 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Modal from 'react-modal';
 import PageAccueil from "./Views/PageAccueil";
 import PageContact from "./Views/PageContact";
-import Modal from 'react-modal';
 import MonCompte from "./Views/MonCompte";
 import PageDomicile from "./Views/PageDomicile";
-import DevisProfessionnel from "./Views/DevisProfessionnel";
-import ReservationSite from "./Views/ReservationSite";
+import MesReservations from "./Views/MesReservations";
 import PageLocalisation from "./Views/PageLocalisation";
 import PageDetails from "./Views/PageDetails";
 
@@ -22,7 +21,7 @@ function App() {
   
     <BrowserRouter>  
       <Routes>
-      <Route path={"/"} element={<PageAccueil/>} />  
+      <Route path={"/"} element={<PageAccueil/>} />     
         <Route path={"/contact"} element={<PageContact/>} />
         <Route path={"/localisation"} element={<PageLocalisation/>} />
         <Route path={"/devisPro"} element={<DevisProfessionnel/>}/>
@@ -30,6 +29,7 @@ function App() {
         <Route path={"/details"} element={<PageDetails/>}/>
         <Route path={"/Domicile"} element={<PageDomicile/>}/>
         <Route path={"/monCompte"} element={<MonCompte/>}/>
+        <Route path={"/MesReservations"} element={<MesReservations/>}/>
       </Routes>
     </BrowserRouter>
 

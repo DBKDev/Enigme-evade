@@ -23,13 +23,12 @@ const PageAccueil = () => {
                     vehicula vel eu risus. Suspendisse rutrum ac arcu id ultricies.
                     Quisque suscipit diam massa, a placerat tellus varius vel. Sed maximus
                     auctor vestibulum. </p>
-                <div className="espace-card"></div>
+                <div className="espace-card" ></div>
+                
             </div>
-
             {/* Tarif */}
-
-            <div className="escape-tarif">
-                <div className='tarif-titre'>
+            <div className="escape-tarif" id='Tarif'>
+                <div className='tarif-titre' >
                     <h1 className="tarif-infos">LES TARIFS</h1>
                     <div className="tarif-barre"></div>
                 </div>
