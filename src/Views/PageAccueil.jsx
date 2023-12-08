@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slideaccueil from '../Components/Slideraccueil';
 import Header from '../Components/Header';
 import "../Styles/PageAccueil.css"
 import Footer from '../Components/Footer';
+import imageAccueil from '../Services/imageAccueil';
 const PageAccueil = () => {
+
+    const [images, setImages] = useState([]);
+    const fetchImageAccueil = async () => {
+        try {
+            const response = await imageAccueil.getImageAccueil();
+            setImages(response.data);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    useEffect (() => {
+        fetchImageAccueil();
+    },[]);
     return <>
         <Header />
         <Slideaccueil />
@@ -23,8 +38,16 @@ const PageAccueil = () => {
                     vehicula vel eu risus. Suspendisse rutrum ac arcu id ultricies.
                     Quisque suscipit diam massa, a placerat tellus varius vel. Sed maximus
                     auctor vestibulum. </p>
-                <div className="espace-card" ></div>
-                
+                <div className="espace-card" >
+                {images.map((image) => {
+                        return (
+                                <img src={process.env.PUBLIC_URL + `/Images/photos_escape/${image.image_nom}.png`} alt={image.alt} width={'300px'} height={'200px'} />
+                        )
+                    })}
+
+                </div>
+                   
+
             </div>
             {/* Tarif */}
             <div className="escape-tarif" id='Tarif'>
