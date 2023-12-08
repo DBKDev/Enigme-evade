@@ -75,9 +75,20 @@ html::-webkit-scrollbar-track {
 /* Partie des cartes et du text */
 .escape-card {
     margin: 0 auto;
-    width: 80%;
+    width: 90%;
     height: 50rem;
     background: var(--background);
+}
+.espace-card{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    }
+
+.espace-card img{
+    margin: 30px 10px;
+    box-shadow: 5px 5px 5px #666;
 }
 
 .escape-card .escape-text {
