@@ -1,32 +1,40 @@
 import React from "react";
-import GoogleMapReact from 'google-map-react';
-<script src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=myMap"></script>
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+import { MapContainer, TileLayer,Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import { Icon } from "leaflet";
 
 
-export default function SimpleMap(){
-  const defaultProps = {
-    center: {
-      lat: 10.99835602,
-      lng: 77.01502627
-    },
-    zoom: 11
-  };
 
-  return (
-    // Important! Always set the container height explicitly
-    <div style={{ height: '100vh', width: '100%' }}>
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: "" }}
-        defaultCenter={defaultProps.center}
-        defaultZoom={defaultProps.zoom}
-      >
-        <AnyReactComponent
-          lat={59.955413}
-          lng={30.337844}
-          text="My Marker"
-        />
-      </GoogleMapReact>
-    </div>
-  );
+const MapContact = () => {
+
+  //création d'un icone custom avec Icon leaflet
+  const customIcon = new Icon({
+    iconUrl: process.env.PUBLIC_URL + "/Images/Pin_map.png",
+    iconSize: [35, 35]
+  })
+
+return<>
+
+<MapContainer center={[50.63680306680231, 3.0677189067119546]} zoom={16} >
+  <TileLayer
+    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+  />
+   <Marker position={[50.63680306680231, 3.0677189067119546]} icon={customIcon}>
+    m
+    <Popup>
+      <span>
+        <h3>
+          Nous sommes ici !
+        </h3>
+      </span>
+    </Popup>
+  </Marker> 
+</MapContainer>
+ 
+  </>
+
+
 }
+
+export default MapContact;

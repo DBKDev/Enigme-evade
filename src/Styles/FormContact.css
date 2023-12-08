@@ -228,18 +228,15 @@ textarea {
     align-items: center; /* Centre verticalement */
 }
 
-.map_google {
-    margin-top:20px;
-    width: 100%;
-    max-width: 100%; /* Facultatif : assurez-vous que l'image ne dépasse pas sa taille d'origine */
-    height: auto; /* Ajuste automatiquement la hauteur en fonction de la largeur pour maintenir les proportions */
+.leaflet-container{
+    height: 500px;
+    z-index: 0;
 }
 
-/* Si vous souhaitez également limiter la largeur maximale de l'image */
-.map_google_image {
-    max-width: 100%;
-    height: auto;
+.leaflet-tile {
+    filter: grayscale(50);
 }
+
 
 /* Media Queries pour rendre le contenu plus responsive */
 
@@ -251,15 +248,19 @@ textarea {
     .adresse_container {
         width: 90%; /* Occupera la largeur totale sur les écrans plus petits */
     }
-}
-
-
-
-@media (max-width: 768px) {
     .bouton_contact {
-        width: 35%; /* Ajustez la largeur du bouton pour les écrans plus petits, si nécessaire */
+        width: 40%; /* Ajustez la largeur du bouton pour les écrans plus petits, si nécessaire */
+    }
+
+    .map_titre{
+        margin: auto 0;
+        margin-bottom: 75px;
     }
 }
+
+
+
+
 
 
 

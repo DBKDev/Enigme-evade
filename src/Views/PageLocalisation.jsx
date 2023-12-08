@@ -3,18 +3,14 @@ import Header from '../Components/Header';
 import FormContact from '../Components/FormContact';
 import Footer from '../Components/Footer';
 import '../Styles/FormContact.css'
+import LocalisationComponent from '../Components/LocalisationComponent';
 
-const PageContact = () => {
+const PageLocalisation = () => {
     return <>
-    <div className='test'>
-    </div>
     <Header/>
-    <FormContact/>
+    <LocalisationComponent/>
     <Footer/>
-   
-    
-
     </>;
 }
  
-export default PageContact;
+export default PageLocalisation;

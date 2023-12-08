@@ -4,6 +4,8 @@ import Header from './Header';
 import contactService from '../Services/contactService';
 import axios from 'axios';
 import Modal from 'react-modal';
+import Map from '../Components/Map';
+import MapContact from '../Components/Map';
 
 Modal.setAppElement('#root');
 
@@ -68,7 +70,6 @@ const FormContact = () => {
     };
 
     return <>
-        <Header />
         <div className="test">
             <div id='page_form_contact'>
 
@@ -175,7 +176,8 @@ const FormContact = () => {
                         </div>
 
                         <div className='map_google'>
-                            <img className='map_google_image' src={process.env.PUBLIC_URL + "/Images/map.png"} alt="" />
+                            {/* <img className='map_google_image' src={process.env.PUBLIC_URL + "/Images/map.png"} alt="" /> */}
+                            <MapContact/>
                         </div>
                     </div>
                 </div>
