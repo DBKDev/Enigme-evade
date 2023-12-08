@@ -79,32 +79,20 @@ html::-webkit-scrollbar-track {
     height: 50rem;
     background: var(--background);
 }
-
-.img-jeu{
-    margin: 30px 10px;
-    box-shadow: 5px 5px 5px #666; 
-    border-radius: 5px;
-}
-
-.img-jeu:hover{
-    transform: scale(1.5);
-    cursor: pointer;
-}
-
-.espace-card{
+.espace-card-jeu{
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
     }
 
-.espace-card img{
+.espace-card-jeu .img-jeu{
+    position: relative;
+    top: 4rem;
     margin: 30px 10px;
 }
 
-
-
-.escape-card-jeu .escape-text {
+.escape-card .escape-text-jeu {
     position: relative;
     top: 4rem;
     margin: 0 auto;

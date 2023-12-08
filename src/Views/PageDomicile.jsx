@@ -61,23 +61,23 @@ const PageDomicile = () => {
                         <p className='domicilet-prixpers-tarif'>80€/personne</p>
                     </div>
                     <div className="item2"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/4pers.png"} alt="" />
-                        <p className='domicilet-nbpers-tarif'>3 personnes</p>
+                        <p className='domicilet-nbpers-tarif'>4 personnes</p>
                         <p className='domicilet-prixpers-tarif'>78€/personne</p>
                     </div>
                     <div className="item3"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/5pers.png"} alt="" />
-                        <p className='domicilet-nbpers-tarif'>3 personnes</p>
+                        <p className='domicilet-nbpers-tarif'>5 personnes</p>
                         <p className='domicilet-prixpers-tarif'>75€/personne</p>
                     </div>
                     <div className="item4"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/6pers.png"} alt="" />
-                        <p className='domicilet-nbpers-tarif'>3 personnes</p>
+                        <p className='domicilet-nbpers-tarif'>6 personnes</p>
                         <p className='domicilet-prixpers-tarif'>73€/personne</p>
                     </div>
                     <div className="item5"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/7pers.png"} alt="" />
-                        <p className='domicilet-nbpers-tarif'>3 personnes</p>
+                        <p className='domicilet-nbpers-tarif'>7 personnes</p>
                         <p className='domicilet-prixpers-tarif'>70€/personne</p>
                     </div>
                     <div className="item6"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/8pers.png"} alt="" />
-                        <p className='domicilet-nbpers-tarif'>3 personnes</p>
+                        <p className='domicilet-nbpers-tarif'>8 personnes</p>
                         <p className='domicilet-prixpers-tarif'>65€/personne</p>
                     </div>
                 </div>
@@ -104,7 +104,7 @@ const PageDomicile = () => {
                     <div className="item1">
                         <p className='domicileacti-nbpers-tous'>PARTICULIERS</p>
                         <p className='domicile-prixpers-tous'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in lectus ligula. </p>
-                        <button type="button" className='domicile-btn-reserver'>RÉSERVER</button>
+                        <button type="button" className='domicile-btn-reserver'><a href="/reservationDomicile" className='laclasse-btn-a'>RÉSERVER</a></button>
                     </div>
                 </div>
             </div>

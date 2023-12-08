@@ -31,17 +31,17 @@ const PageAccueil = () => {
                     <div className="escape-barre"></div>
                 </div>
             </div>
-            <div className="escape-card-jeu">
-                <p className='escape-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <div className="escape-card">
+                <p className='escape-text-jeu'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Duis in lectus ligula. Donec tincidunt a massa sit amet finibus.
                     Nunc scelerisque aliquet feugiat. Vestibulum nec lectus sed nibh iaculis
                     vehicula vel eu risus. Suspendisse rutrum ac arcu id ultricies.
                     Quisque suscipit diam massa, a placerat tellus varius vel. Sed maximus
                     auctor vestibulum. </p>
-                <div className="espace-card" >
+                <div className="espace-card-jeu" >
                 {images.map((image) => {
                         return (
-                                <img src={process.env.PUBLIC_URL + `/Images/photos_escape/${image.image_nom}.png`} alt={image.alt} width={'300px'} height={'200px'} className='img-jeu' />
+                                <img src={process.env.PUBLIC_URL + `/Images/photos_escape/${image.image_nom}.png`} alt={image.alt} width={'300px'} height={'200px'} className='img-jeu'/>
                         )
                     })}
 
@@ -67,27 +67,27 @@ const PageAccueil = () => {
                     <div className='taris-icon'>
                         <div className="item1"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/3pers.png"} alt="" />
                             <p className='nbpers-tarif'>3 personnes</p>
-                            <p className='prixpers-tarif'>40€/personne</p>
+                            <p className='prixpers-tarif'>80€/personne</p>
                         </div>
                         <div className="item2"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/4pers.png"} alt="" />
-                            <p className='nbpers-tarif'>3 personnes</p>
-                            <p className='prixpers-tarif'>40€/personne</p>
+                            <p className='nbpers-tarif'>4 personnes</p>
+                            <p className='prixpers-tarif'>78€/personne</p>
                         </div>
                         <div className="item3"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/5pers.png"} alt="" />
-                            <p className='nbpers-tarif'>3 personnes</p>
-                            <p className='prixpers-tarif'>40€/personne</p>
+                            <p className='nbpers-tarif'>5 personnes</p>
+                            <p className='prixpers-tarif'>75€/personne</p>
                         </div>
                         <div className="item4"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/6pers.png"} alt="" />
-                            <p className='nbpers-tarif'>3 personnes</p>
-                            <p className='prixpers-tarif'>40€/personne</p>
+                            <p className='nbpers-tarif'>6 personnes</p>
+                            <p className='prixpers-tarif'>73€/personne</p>
                         </div>
                         <div className="item5"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/7pers.png"} alt="" />
-                            <p className='nbpers-tarif'>3 personnes</p>
-                            <p className='prixpers-tarif'>40€/personne</p>
+                            <p className='nbpers-tarif'>7 personnes</p>
+                            <p className='prixpers-tarif'>70€/personne</p>
                         </div>
                         <div className="item6"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/8pers.png"} alt="" />
-                            <p className='nbpers-tarif'>3 personnes</p>
-                            <p className='prixpers-tarif'>40€/personne</p>
+                            <p className='nbpers-tarif'>8 personnes</p>
+                            <p className='prixpers-tarif'>65€/personne</p>
                         </div>
 
                     </div>
