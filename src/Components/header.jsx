@@ -60,8 +60,8 @@ const [userRegister, setUserRegister] = useState(false)
                             <input type="email" placeholder="E-mail" />
                             <input type="password" placeholder="Mot de passe" />
                             <input className="btn-user" type="submit" value="Connexion" />
-                            <p>Mot de passe oublié ? <a href="#">Redefinir mot de passe</a></p>
-                            <p>Pas de compte ? <a href="#" id="create" onClick={()=>{
+                            <p>Mot de passe oublié ? <a href="#" className='laclasse-a'>Redefinir mot de passe</a></p>
+                            <p>Pas de compte ? <a href="#" id="create" className='laclasse-a' onClick={()=>{
                                 setUserContent(false)
                                 setUserRegister(true)
                             }}>Créer un compte</a></p>
@@ -75,7 +75,7 @@ const [userRegister, setUserRegister] = useState(false)
                             <input type="text" placeholder="Votre adresse" />
                             <input type="number" placeholder="Numéro de téléphone" />
                             <input className="btn-user" type="submit" value="S'inscrire" />
-                            <p>Déjà un compte ? <a href="#" id="connexion" onClick={()=>{
+                            <p>Déjà un compte ? <a href="#" id="connexion" className='laclasse-a' onClick={()=>{
                                 setUserContent(true)
                                 setUserRegister(false)
                             }}>Ce Connecter</a></p>

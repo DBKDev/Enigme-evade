@@ -14,8 +14,15 @@ const MesReservations = () => {
         </div>
         <div className="containerReservationFlex">
             <div className="mesReservationSite">
+                <h3>sur site</h3>
                 <div>
                     <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                    <p>a</p>
+                    <p>a</p>
+                    <p>a</p>
+                    <p>a</p>
+                    <p>a</p>
+                    <p>a</p>
                     <p>a</p>
                     <p>a</p>
                     <p>a</p>
@@ -40,6 +47,7 @@ const MesReservations = () => {
                 </div>
             </div>
             <div className="mesReservationDomicile">
+                <h3>à domicile</h3>
                 <div>
                 <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
                     <p>a</p>
