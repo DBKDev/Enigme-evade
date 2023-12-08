@@ -10,7 +10,7 @@
     outline: none;
     border: none;
     scroll-behavior: smooth;
-    user-select: none;    
+    user-select: none;
 }
 
 html::-webkit-scrollbar {
@@ -25,6 +25,7 @@ html::-webkit-scrollbar-thumb {
 html::-webkit-scrollbar-track {
     background: var(--background-noir);
 }
+
 :root {
     --background: #EEEEEE;
     --background-noir: #212121;
@@ -36,7 +37,7 @@ html::-webkit-scrollbar-track {
 
 /* Une activité ouvert à tous */
 
-.domicile-tous{
+.domicile-tous {
     display: flex;
     margin: 0 auto;
     width: 100%;
@@ -46,7 +47,7 @@ html::-webkit-scrollbar-track {
     margin-top: 2rem;
 }
 
-.domicile-tous .domicile-tous-infos{
+.domicile-tous .domicile-tous-infos {
     position: relative;
     top: 3rem;
     color: var(--text-gris);
@@ -55,7 +56,7 @@ html::-webkit-scrollbar-track {
     text-align: center;
 }
 
-.domicile-tous .domicile-tous-barre{
+.domicile-tous .domicile-tous-barre {
     position: relative;
     margin: 0 auto;
     top: 3rem;
@@ -64,7 +65,7 @@ html::-webkit-scrollbar-track {
     background: var(--bouton);
 }
 
-.domicile-tous-card{
+.domicile-tous-card {
     margin: 0 auto;
     width: 100%;
     height: auto;
@@ -73,7 +74,7 @@ html::-webkit-scrollbar-track {
     margin-bottom: 5rem;
 }
 
-.domicile-tous-card .domicile-tous-text{  
+.domicile-tous-card .domicile-tous-text {
     margin: 0 auto;
     width: 40%;
     margin-top: 3rem;
@@ -84,44 +85,45 @@ html::-webkit-scrollbar-track {
 }
 
 
-.domicile-espace-card{   
+.domicile-espace-card {
     margin-top: 5rem;
- }
- 
- .domicile-tous-icon{
-     display: flex;
-     flex-wrap: wrap;
-     align-items: center;
-     justify-content: space-evenly;
-     
- }
- 
- .domicile-tous-icon img{
-     width: 12rem;
-     
- }
- .domicile-tous-icon {
-    text-align: center;
- }
- 
- .domicile-tous-icon .domicile-nbpers-tous {
-     font-size: 1.6rem;
-     font-weight: 700;
-     text-align: center;
-     color: var(--bouton);
- }
- 
- .domicile-tous-icon .domicile-prixpers-tous{
-     font-size: 1.1rem;
-     max-width: 20rem;
-     font-weight: 700;
-     text-align: center;
-     color: var(--text-gris);
- }
- 
+}
 
- 
-.domicile-escape-tarif{
+.domicile-tous-icon {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.domicile-tous-icon img {
+    width: 12rem;
+
+}
+
+.domicile-tous-icon {
+    text-align: center;
+}
+
+.domicile-tous-icon .domicile-nbpers-tous {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--bouton);
+}
+
+.domicile-tous-icon .domicile-prixpers-tous {
+    font-size: 1.1rem;
+    max-width: 20rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-gris);
+}
+
+
+
+.domicile-escape-tarif {
     display: flex;
     margin: 0 auto;
     width: 100%;
@@ -130,7 +132,7 @@ html::-webkit-scrollbar-track {
     height: 80px;
 }
 
-.domicile-escape-tarif .domicile-tarif-infos{
+.domicile-escape-tarif .domicile-tarif-infos {
     position: relative;
     top: 3rem;
     color: var(--text-blanc);
@@ -138,7 +140,7 @@ html::-webkit-scrollbar-track {
     font-size: 2.2rem;
 }
 
-.domicile-escape-tarif .domicile-tarif-barre{
+.domicile-escape-tarif .domicile-tarif-barre {
     position: relative;
     margin: 0 auto;
     top: 3rem;
@@ -150,7 +152,7 @@ html::-webkit-scrollbar-track {
 
 
 /* Titre tarif */
-.domicilet-escape-tarif{
+.domicilet-escape-tarif {
     display: flex;
     margin: 0 auto;
     width: 100%;
@@ -159,7 +161,7 @@ html::-webkit-scrollbar-track {
     height: 80px;
 }
 
-.domicilet-escape-tarif .domicilet-tarif-infos{
+.domicilet-escape-tarif .domicilet-tarif-infos {
     position: relative;
     top: 3rem;
     color: var(--text-blanc);
@@ -167,7 +169,7 @@ html::-webkit-scrollbar-track {
     font-size: 2.2rem;
 }
 
-.domicilet-escape-tarif .domicilet-tarif-barre{
+.domicilet-escape-tarif .domicilet-tarif-barre {
     position: relative;
     margin: 0 auto;
     top: 3rem;
@@ -175,8 +177,9 @@ html::-webkit-scrollbar-track {
     height: 0.8rem;
     background: var(--bouton);
 }
+
 /* Partie du text Tarif */
-.domicilet-tarif-card{
+.domicilet-tarif-card {
     margin: 0 auto;
     width: 100%;
     height: auto;
@@ -184,7 +187,7 @@ html::-webkit-scrollbar-track {
     padding: 20px 100px;
 }
 
-.domicilet-tarif-card .domicilet-tarif-text{  
+.domicilet-tarif-card .domicilet-tarif-text {
     margin: 0 auto;
     width: 40%;
     margin-top: 3rem;
@@ -196,18 +199,18 @@ html::-webkit-scrollbar-track {
 
 /* Icon + prix Tarif */
 
-.domicilet-espace-card{   
-   margin-top: 5rem;
+.domicilet-espace-card {
+    margin-top: 5rem;
 }
 
-.domicilet-taris-icon{
+.domicilet-taris-icon {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.domicilet-taris-icon img{
+.domicilet-taris-icon img {
     width: 12rem;
 }
 
@@ -218,7 +221,7 @@ html::-webkit-scrollbar-track {
     color: var(--text-blanc);
 }
 
-.domicilet-taris-icon .domicilet-prixpers-tarif{
+.domicilet-taris-icon .domicilet-prixpers-tarif {
     font-size: 1.1rem;
     font-weight: 700;
     text-align: center;
@@ -226,7 +229,7 @@ html::-webkit-scrollbar-track {
 }
 
 
-.domicile-btn-reserver{
+.domicile-btn-reserver {
     background: var(--bouton);
     border-radius: 8px;
     width: 140px;
@@ -241,17 +244,16 @@ html::-webkit-scrollbar-track {
     cursor: pointer;
 }
 
-.domicileacti-nbpers-tous{
+.domicileacti-nbpers-tous {
     color: var(--bouton);
-text-align: center;
-font-family: Poppins;
-font-size: 2rem;
-font-style: normal;
-font-weight: 800;
-line-height: normal
+    text-align: center;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal
 }
 
-.domicile-btn-reserver:hover{
+.domicile-btn-reserver:hover {
     background: var(--bouton-hover);
 }
 
@@ -259,7 +261,7 @@ line-height: normal
 /* Titre Pro*/
 
 
-.domicile-pro-tous{
+.domicile-pro-tous {
     display: flex;
     margin: 0 auto;
     width: 100%;
@@ -268,17 +270,17 @@ line-height: normal
     background: var(--background-noir);
 }
 
-.domicile-pro-tous .domicile-pro-tous-infos{
+.domicile-pro-tous .domicile-pro-tous-infos {
     position: relative;
     top: 2rem;
     color: var(--text-blanc);
     font-weight: 700;
     font-size: 2.2rem;
     text-align: center;
-    
+
 }
 
-.domicile-pro-tous .domicile-pro-tous-barre{
+.domicile-pro-tous .domicile-pro-tous-barre {
     position: relative;
     margin: 0 auto;
     top: 2rem;
@@ -287,7 +289,7 @@ line-height: normal
     background: var(--bouton);
 }
 
-.domicile-pro-tous-card{
+.domicile-pro-tous-card {
     margin: 0 auto;
     width: 100%;
     height: auto;
@@ -296,7 +298,7 @@ line-height: normal
     margin-bottom: 5rem;
 }
 
-.domicile-pro-tous-card .domicile-pro-tous-text{  
+.domicile-pro-tous-card .domicile-pro-tous-text {
     margin: 0 auto;
     width: 55%;
     margin-top: 2rem;
@@ -307,14 +309,15 @@ line-height: normal
 }
 
 
-.domicile-pro-espace-card{   
+.domicile-pro-espace-card {
     margin-top: 5rem;
- }
- 
- .domicile-btn-devis{
+}
+
+.domicile-btn-devis {
     margin-bottom: 4rem;
- }
- .domicile-btn-devis{
+}
+
+.domicile-btn-devis {
     background: var(--bouton);
     border-radius: 8px;
     width: 140px;
@@ -328,6 +331,7 @@ line-height: normal
     margin-top: 2rem;
     cursor: pointer;
 }
-.domicile-btn-devis:hover{
+
+.domicile-btn-devis:hover {
     background: var(--bouton-hover);
 }
