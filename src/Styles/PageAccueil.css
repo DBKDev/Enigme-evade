@@ -86,7 +86,7 @@ html::-webkit-scrollbar-track {
     justify-content: center;
     }
 
-.espace-card img{
+.imgJeu{
     margin: 30px 10px;
     box-shadow: 5px 5px 5px #666;
 }
@@ -152,7 +152,7 @@ html::-webkit-scrollbar-track {
 
 /* Icon + prix Tarif */
 
-.espace-card {
+.espace-card-tarif {
     margin-top: 5rem;
 }
 
@@ -232,7 +232,7 @@ html::-webkit-scrollbar-track {
 }
 
 
-.espace-card {
+.espace-card-tarif {
     margin-top: 5rem;
 }
 
