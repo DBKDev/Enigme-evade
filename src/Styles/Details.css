@@ -47,9 +47,10 @@ html::-webkit-scrollbar-track {
 }
 
 .titre_details{
-    font-size: 64px;
     color: var(--text-gris);
-    font-weight: 500;
+    font-weight: 800;
+    font-size: 2.2rem;
+    line-height: normal;
 }
 
 .titre_container .separation_titre_details{
@@ -115,23 +116,73 @@ html::-webkit-scrollbar-track {
 .img1 {
     height: 200px;
     width: calc(50% - 5px); /* Ajustement de la largeur pour tenir compte de la marge */
-    background-color: rgb(255, 0, 0);
     border-radius: 5px;
+    
 }
+
 
 .img2 {
     height: 200px;
     width: calc(50% - 5px); /* Ajustement de la largeur pour tenir compte de la marge */
-    background-color: rgb(16, 126, 222);
     border-radius: 5px;
 }
 
 .img3 {
     height: 250px;
     width: 100%; /* La largeur totale pour la troisième image */
-    background-color: rgb(16, 222, 54);
     border-radius: 5px;
 }
+
+.img1 img, .img2 img, .img3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.img1:hover,.img2:hover,.img3:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+
+/***************/
+/* CSS MODAL */
+/*************/
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .modal-content {
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 150px;
+    right: 150px;
+    color: #f1f1f1;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
 
 
@@ -143,13 +194,12 @@ CSS SYNOPSIS ET OBJ
     
     height: 90%;
     width: 40%;
-    margin: auto 0;
+    margin-top: 10px;
     display: block;
 }
 
 .synopsis{
-    margin: 10px;
-    margin-top: 50Px;
+    margin: 5px;
 }
 
 .synopsis_titre{
@@ -192,73 +242,78 @@ CSS SYNOPSIS ET OBJ
 CSS TEMPS ET DIFFICULTE 
 ************************/
 
-.temps_difficulte_container{
-    
+.temps_difficulte_container {
     height: 90%;
     width: 20%;
-    margin: auto 0;
+    margin: 10px 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .temps_container {
-    height: 50%;
+    /* height: 100%; */
+    margin-top: 50px;
     width: 80%;
-    margin: 10px auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .temps_image {
-    margin-top: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40%;
+    height: 50%;
 }
 
 .temps_image img {
     display: block;
-    margin: 0 auto;
-    width: 50%;
+    width: 65%;
     max-width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: contain;
 }
 
 .temps_text {
     text-align: center;
-    margin: 10px 0; /* Ajuster la marge entre l'image et le texte */
+    margin: 2px 0;
     font-size: 20px;
 }
 
-.difficulte_container{
+.difficulte_container {
     height: 50%;
     width: 80%;
-    margin: 10px auto;
+    margin: 0 auto 10px; /* Ajustement de la marge */
+    display: flex;
+    flex-direction: column;
 }
 
-.difficulte_titre{
+.difficulte_titre {
     font-size: 26px;
     text-align: center;
-    margin: auto 0;
+    margin: 0;
     margin-bottom: 10px;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
-.difficulte_text{
-    font-size: 24px;
-    font-weight: 700;
-    text-align: left;
+.difficulte_image {
+    margin-top: 10px;
+    display: flex;
     justify-content: center;
-    color: var(--bouton);
-    margin: 10px;
+    align-items: center;
+    height: 40%;
+    flex-direction: column;
 }
 
+.difficulte_image img {
+    display: flex;
+    margin: 0 auto;
+    width: 65%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 
 /*************
  CSS BOUTON 
@@ -272,7 +327,7 @@ CSS TEMPS ET DIFFICULTE
     background-color: var(--bouton);
     color: var(--text-blanc);
     padding: 15px;
-    width: 20%;
+    width: 25%;
     border: none;
     border-radius: 8px;
     font-size: 24px;

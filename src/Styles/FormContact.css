@@ -73,25 +73,23 @@ body{
   }
 
   .contact_titre {
-    margin-bottom: 20px;
     display: flex;
     justify-content: center;
-    width: 100%;
+    margin: 0 auto;
     height: 80px;
 }
 
 .titre_contact h1 {
     color: var(--text-gris);
-    font-size: 2rem;
-    font-weight: 700;
+    font-weight: 800;
+    font-size: 2.2rem;
+    line-height: normal;
 }
 
 .contact_titre .separation_contact {
-    position: relative;
-    top: 0.2rem;
-    right: 4.9rem;
+    position: relative;    
     margin: 0 auto;
-    width: 200%;
+    width: 90%;
     height: 0.8em;
     background-color: var(--bouton);
   }
@@ -234,7 +232,7 @@ textarea {
 }
 
 .leaflet-tile {
-    filter: grayscale(50);
+    filter: grayscale(100);
 }
 
 
