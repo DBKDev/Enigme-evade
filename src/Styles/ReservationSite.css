@@ -1,4 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 * {
     box-sizing: border-box;
@@ -33,56 +33,135 @@ html::-webkit-scrollbar-track {
     --text-gris: #333333;
     --text-blanc: #FFFFFF;    
 }
-h2 {
-    font-size: 48px;
+.reservationSiteMargin h2 {
+    font-size: 38px;
     text-align: center;
     font-weight: bold;
 }
-.devisProSouligne{
+
+.reservationSiteSouligne{
     width: 18%;
-    height: 0.6rem;
+    height: 0.4rem;
     background: var(--bouton);
     margin: 5px auto;
 }
-.divProMargin{
-    margin-top: 170px;
+.reservationSiteMargin{
+    margin-top: 140px !important;
 }
-.devisProContainer{
-   width: 90%;
-   border: 1px solid black;
+.reservationSiteContainer{
+   width: 60%;
+   border: 2px solid black;
    margin: 50px auto;
    padding-bottom: 50px;
+   padding-top: 20px;
 }
-.devisProFlex{
+.reservationSiteFlex{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: relative;
 }
-.devisProFlex *{
-    width: 65%;
+.reservationSiteFlex *{
+    font-size: 20px;
+    border-radius: 8px;
+}
+.reservationSiteFlex input[type='text'],.reservationSiteFlex input[type='number'],.reservationSiteFlex input[type='date'],.reservationSiteFlex input[type='email'] , .reservationSiteFlex select {
+    background-color: #c9c8c8;
+    margin: 13px;
+    width: 60%;
     height: 10%;
-    font-size: 36px;
     padding: 10px;
 }
-.devisProFlex input , select{
-    background-color: #c9c8c8;
-    margin: 10px;
+.reservationSiteFlex .agendaSite{
+    width: 62.5%;
+    height: 10%;
 }
-.devisProFlex input[type='submit']{
+
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.reservationSiteFlex input[type='submit']{
     background: var(--bouton);
-    width: 14%;
-    height: 9%;
     color: var(--text-blanc);
+    width: 128px;
+    height: 37px;
     position: absolute;
-    bottom: -12.5%;
+    bottom: -12%;
     border-radius: 8px;
     cursor: pointer;
+    font-size: 16px ;
 }
 
-.devisProFlex input[type='submit']:hover{
+.reservationSiteFlex input[type='submit']:hover{
     background: var(--bouton-hover);
 }
+.nomPrenomReservationSite{
+    width: 63%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.nomPrenomReservationSite input{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+@media screen and (min-width: 1900px) {
+    .nomPrenomReservationSite{
+        width: 62.5%;
+    }
+}
+@media screen and (min-width: 2000px) {
+    .nomPrenomReservationSite{
+        width: 62%;
+    }
+}
+@media screen and (min-width: 3000px) {
+    .nomPrenomReservationSite{
+        width: 61.5%;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .reservationSiteMargin{
+        margin-top: 120px !important;
+    }
+    .reservationSiteMargin h2{
+        font-size: 24px;
+    }
+    .reservationSiteFlex *{
+        font-size: 14px;
+    }
+    .reservationSiteFlex input[type='submit']{
+        font-size: 12px;
+        position: absolute;
+        bottom: -15%;
+        padding-bottom: 1px;
+    }
+}
 
- */
+@media screen and (max-width: 600px) {
+    .reservationSiteMargin h2{
+        font-size: 18px !important;
+    }
+    .reservationSiteFlex input[type='text'], input[type='number'], input[type='date'], input[type='email'] , #difficulty, #escapeGame, .devisProMargin {
+        background-color: #c9c8c8;
+        margin: 10px;
+        width: 60%;
+        height: 10%;
+        padding: 10px;
+        font-size: 12px;
+    }
+    .reservationSiteFlex input[type='submit']{
+        font-size: 10px;
+        position: absolute;
+        bottom: -16%;
+        padding-bottom: 1px;
+        width: 100px;
+        height: 30px;
+    }
+}
+
+

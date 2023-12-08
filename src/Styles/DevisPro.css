@@ -70,7 +70,9 @@ background: var(--bouton);
     font-size: 20px;
     border-radius: 8px;
 }
-.devisProFlex input[type='text'], input[type='number'], input[type='date'], input[type='email'] , select, .devisProMargin {
+
+.devisProFlex input[type='text'],.devisProFlex input[type='number'],.devisProFlex input[type='date'],.devisProFlex input[type='email'] , .devisProFlex select {
+
     background-color: #c9c8c8;
     margin: 13px;
     width: 60%;
