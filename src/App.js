@@ -2,13 +2,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Modal from 'react-modal';
 import PageAccueil from "./Views/PageAccueil";
 import PageContact from "./Views/PageContact";
-import DevisProfessionnel from "./Views/DevisProfessionnel";
-import ReservationSite from "./Views/ReservationSite";
 import MonCompte from "./Views/MonCompte";
 import PageDomicile from "./Views/PageDomicile";
 import MesReservations from "./Views/MesReservations";
 import PageLocalisation from "./Views/PageLocalisation";
 import PageDetails from "./Views/PageDetails";
+import InterfaceAdmin from "./Views/InterfaceAdmin";
+import ReservationDomicile from "./Views/ReservationDomicile";
+import DevisProfessionnel from "./Views/DevisProfessionnel";
+import ReservationSite from "./Views/ReservationSite";
 
 
 // Définir l'élément racine de votre application pour le composant Modal
@@ -32,6 +34,8 @@ function App() {
         <Route path={"/details"} element={<PageDetails/>}/>
         <Route path={"/Domicile"} element={<PageDomicile/>}/>
         <Route path={"/monCompte"} element={<MonCompte/>}/>
+        <Route path={"/interface"} element={<InterfaceAdmin/>}/>
+        <Route path={"/reservationDomicile"} element={<ReservationDomicile/>}/>
         <Route path={"/MesReservations"} element={<MesReservations/>}/>
       </Routes>
     </BrowserRouter>

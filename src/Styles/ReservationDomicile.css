@@ -33,55 +33,53 @@ html::-webkit-scrollbar-track {
     --text-gris: #333333;
     --text-blanc: #FFFFFF;    
 }
-.divProMargin h2 {
-    text-align: center;
-    color: var(--text-gris);
-    font-weight: 800;
+.divDomicileReservation h2 {
     font-size: 2.2rem;
-    line-height: normal;
+    text-align: center;
+    font-weight: bold;
 }
 
-.devisProSouligne{   
-position: relative;
-margin: 0 auto;
-width: 15%;
-height: 0.8rem;
-background: var(--bouton);
+.DomicileReservationSouligne{
+    width: 18%;
+    height: 0.4rem;
+    background: var(--bouton);
+    margin: 5px auto;
 }
-
-.divProMargin{
+.DomicileReservation{
     margin-top: 140px !important;
 }
-.devisProContainer{
+.DomicileReservationContainer{
    width: 60%;
    border: 2px solid black;
    margin: 50px auto;
    padding-bottom: 50px;
    padding-top: 20px;
 }
-.devisProFlex{
+.DomicileReservationFlex{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
 }
-.devisProFlex *{
+.DomicileReservationFlex *{
     font-size: 20px;
     border-radius: 8px;
 }
-.devisProFlex input[type='text'], input[type='number'], input[type='date'], input[type='email'] , select, .devisProMargin {
+.DomicileReservationFlex input[type='text'],.DomicileReservationFlex input[type='number'],.DomicileReservationFlex input[type='date'],.DomicileReservationFlex input[type='email'] , .DomicileReservationFlex select, .devisProMargin {
     background-color: #c9c8c8;
     margin: 13px;
     width: 60%;
     height: 10%;
     padding: 10px;
 }
+
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
-.devisProFlex input[type='submit']{
+.DomicileReservationFlex input[type='submit']{
     background: var(--bouton);
     color: var(--text-blanc);
     width: 128px;
@@ -93,46 +91,46 @@ input[type="number"]::-webkit-outer-spin-button {
     font-size: 16px ;
 }
 
-.devisProFlex input[type='submit']:hover{
+.DomicileReservationFlex input[type='submit']:hover{
     background: var(--bouton-hover);
 }
-.nomPrenomDevisPro{
+.nomPrenomDomicile{
     width: 63%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
 }
-.nomPrenomDevisPro input{
+.nomPrenomDomicile input{
     margin-bottom: 0;
     margin-top: 0;
 }
 @media screen and (min-width: 1900px) {
-    .nomPrenomDevisPro{
+    .nomPrenomDomicile{
         width: 62.5%;
     }
 }
 @media screen and (min-width: 2000px) {
-    .nomPrenomDevisPro{
+    .nomPrenomDomicile{
         width: 62%;
     }
 }
 @media screen and (min-width: 3000px) {
-    .nomPrenomDevisPro{
+    .nomPrenomDomicile{
         width: 61.5%;
     }
 }
 @media screen and (max-width: 1100px) {
-    .divProMargin{
+    .DomicileReservation{
         margin-top: 120px !important;
     }
-    .divProMargin h2{
+    .DomicileReservation h2{
         font-size: 24px;
     }
-    .devisProFlex *{
+    .DomicileReservationFlex *{
         font-size: 14px;
     }
-    .devisProFlex input[type='submit']{
+    .DomicileReservationFlex input[type='submit']{
         font-size: 12px;
         position: absolute;
         bottom: -15%;
@@ -141,10 +139,10 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 @media screen and (max-width: 600px) {
-    .divProMargin h2{
+    .DomicileReservation h2{
         font-size: 18px !important;
     }
-    .devisProFlex input[type='text'], input[type='number'], input[type='date'], input[type='email'] , #difficulty, #escapeGame, .devisProMargin {
+    .DomicileReservationFlex input[type='text'], input[type='number'], input[type='date'], input[type='email'] , #difficulty, #escapeGame, .devisProMargin {
         background-color: #c9c8c8;
         margin: 10px;
         width: 60%;
@@ -152,7 +150,7 @@ input[type="number"]::-webkit-outer-spin-button {
         padding: 10px;
         font-size: 12px;
     }
-    .devisProFlex input[type='submit']{
+    .DomicileReservationFlex input[type='submit']{
         font-size: 10px;
         position: absolute;
         bottom: -16%;
