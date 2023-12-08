@@ -115,7 +115,6 @@ html::-webkit-scrollbar-track {
 .img1 {
     height: 200px;
     width: calc(50% - 5px); /* Ajustement de la largeur pour tenir compte de la marge */
-    background-color: rgb(255, 0, 0);
     border-radius: 5px;
     
 }
@@ -124,14 +123,12 @@ html::-webkit-scrollbar-track {
 .img2 {
     height: 200px;
     width: calc(50% - 5px); /* Ajustement de la largeur pour tenir compte de la marge */
-    background-color: rgb(16, 126, 222);
     border-radius: 5px;
 }
 
 .img3 {
     height: 250px;
     width: 100%; /* La largeur totale pour la troisième image */
-    background-color: rgb(16, 222, 54);
     border-radius: 5px;
 }
 
