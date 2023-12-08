@@ -22,8 +22,8 @@ const Footer = () => {
                         <li><a href="#">Conditions de vente</a></li>
                         <li><a href="#">Mentions légales</a></li>
                         <li><a href="#">Support</a></li>
-                        <li><a href="#">Nous contacter</a></li>
-                        <li><a href="#">Voir le plan</a></li>
+                        <li><a href="/contact">Nous contacter</a></li>
+                        <li><a href="/localisation">Voir le plan</a></li>
                     </ul>
                 </div>
                 <div className="footer-box">

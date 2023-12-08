@@ -10,7 +10,7 @@
     outline: none;
     border: none;
     scroll-behavior: smooth;
-    user-select: none;    
+    user-select: none;
 }
 
 html::-webkit-scrollbar {
@@ -25,6 +25,7 @@ html::-webkit-scrollbar-thumb {
 html::-webkit-scrollbar-track {
     background: var(--background-noir);
 }
+
 :root {
     --background: #EEEEEE;
     --background-noir: #212121;
@@ -34,7 +35,7 @@ html::-webkit-scrollbar-track {
     --text-blanc: #FFFFFF;
 }
 
-#escape-background{
+#escape-background {
     background: var(--background);
 }
 
@@ -43,8 +44,9 @@ html::-webkit-scrollbar-track {
     width: 100%;
     background-color: var(--background-noir);
 }
+
 /* Titre Escape Game */
-.escape-game{
+.escape-game {
     display: flex;
     width: 100%;
     background: var(--background);
@@ -52,15 +54,16 @@ html::-webkit-scrollbar-track {
     height: 80px;
 }
 
-.escape-game .escape-infos{
+.escape-game .escape-infos {
     position: relative;
     top: 3rem;
     color: var(--text-gris);
-    font-weight: 700;
+    font-weight: 800;
     font-size: 2.2rem;
+    line-height: normal;
 }
 
-.escape-game .escape-barre{
+.escape-game .escape-barre {
     position: relative;
     margin: 0 auto;
     top: 3rem;
@@ -68,15 +71,16 @@ html::-webkit-scrollbar-track {
     height: 0.8rem;
     background: var(--bouton);
 }
+
 /* Partie des cartes et du text */
-.escape-card{
+.escape-card {
     margin: 0 auto;
     width: 80%;
     height: 50rem;
     background: var(--background);
 }
 
-.escape-card .escape-text{   
+.escape-card .escape-text {
     position: relative;
     top: 4rem;
     margin: 0 auto;
@@ -89,7 +93,7 @@ html::-webkit-scrollbar-track {
 
 /* Partie Tarif */
 
-.escape-tarif{
+.escape-tarif {
     display: flex;
     margin: 0 auto;
     width: 100%;
@@ -98,15 +102,16 @@ html::-webkit-scrollbar-track {
     height: 80px;
 }
 
-.escape-tarif .tarif-infos{
+.escape-tarif .tarif-infos {
     position: relative;
     top: 3rem;
     color: var(--text-blanc);
-    font-weight: 700;
+    font-weight: 800;
     font-size: 2.2rem;
+    line-height: normal;
 }
 
-.escape-tarif .tarif-barre{
+.escape-tarif .tarif-barre {
     position: relative;
     margin: 0 auto;
     top: 3rem;
@@ -114,8 +119,9 @@ html::-webkit-scrollbar-track {
     height: 0.8rem;
     background: var(--bouton);
 }
+
 /* Partie du text Tarif */
-.tarif-card{
+.tarif-card {
     margin: 0 auto;
     width: 100%;
     height: auto;
@@ -123,7 +129,7 @@ html::-webkit-scrollbar-track {
     padding: 20px 100px;
 }
 
-.tarif-card .tarif-text{  
+.tarif-card .tarif-text {
     margin: 0 auto;
     width: 40%;
     margin-top: 3rem;
@@ -135,18 +141,18 @@ html::-webkit-scrollbar-track {
 
 /* Icon + prix Tarif */
 
-.espace-card{   
-   margin-top: 5rem;
+.espace-card {
+    margin-top: 5rem;
 }
 
-.taris-icon{
+.taris-icon {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.taris-icon img{
+.taris-icon img {
     width: 12rem;
 }
 
@@ -157,7 +163,7 @@ html::-webkit-scrollbar-track {
     color: var(--text-blanc);
 }
 
-.taris-icon .prixpers-tarif{
+.taris-icon .prixpers-tarif {
     font-size: 1.1rem;
     font-weight: 700;
     text-align: center;
@@ -167,7 +173,7 @@ html::-webkit-scrollbar-track {
 
 /* Activité pour tous  */
 
-.escape-tous{
+.escape-tous {
     display: flex;
     margin: 0 auto;
     width: 100%;
@@ -177,16 +183,17 @@ html::-webkit-scrollbar-track {
     margin-top: 2rem;
 }
 
-.escape-tous .tous-infos{
+.escape-tous .tous-infos {
     position: relative;
     top: 3rem;
     color: var(--text-gris);
-    font-weight: 700;
+    font-weight: 800;
     font-size: 2.2rem;
     text-align: center;
+    line-height: normal;
 }
 
-.escape-tous .tous-barre{
+.escape-tous .tous-barre {
     position: relative;
     margin: 0 auto;
     top: 3rem;
@@ -195,7 +202,7 @@ html::-webkit-scrollbar-track {
     background: var(--bouton);
 }
 
-.tous-card{
+.tous-card {
     margin: 0 auto;
     width: 100%;
     height: auto;
@@ -203,7 +210,7 @@ html::-webkit-scrollbar-track {
     padding: 20px 100px;
 }
 
-.tous-card .tous-text{  
+.tous-card .tous-text {
     margin: 0 auto;
     width: 40%;
     margin-top: 3rem;
@@ -214,45 +221,48 @@ html::-webkit-scrollbar-track {
 }
 
 
-.espace-card{   
+.espace-card {
     margin-top: 5rem;
- }
- 
- .tous-icon{
-     display: flex;
-     flex-wrap: wrap;
-     align-items: center;
-     justify-content: space-evenly;
-     gap: -5rem;
- }
- 
- .tous-icon img{
-     width: 12rem;
-     
- }
- .tous-icon {
+}
+
+.tous-icon {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: -5rem;
+}
+
+.tous-icon img {
+    width: 12rem;
+
+}
+
+.tous-icon {
     text-align: center;
- }
- 
- .tous-icon .nbpers-tous {
-     font-size: 1.6rem;
-     font-weight: 700;
-     text-align: center;
-     color: var(--bouton);
- }
- 
- .tous-icon .prixpers-tous{
-     font-size: 1.1rem;
-     max-width: 20rem;
-     font-weight: 700;
-     text-align: center;
-     color: var(--text-gris);
- }
- 
+}
 
- /* Lieu ouvert à tous */
+.tous-icon .nbpers-tous {
+    text-align: center;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    color: var(--bouton);
+}
 
- .escape-ouvert{
+.tous-icon .prixpers-tous {
+    font-size: 1.1rem;
+    max-width: 20rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-gris);
+}
+
+
+/* Lieu ouvert à tous */
+
+.escape-ouvert {
     display: flex;
     margin: 0 auto;
     width: 100%;
@@ -262,16 +272,17 @@ html::-webkit-scrollbar-track {
     margin-top: 2rem;
 }
 
-.escape-ouvert .ouvert-infos{
+.escape-ouvert .ouvert-infos {
     position: relative;
     top: 3rem;
     color: var(--text-gris);
-    font-weight: 700;
+    font-weight: 800;
     font-size: 2.2rem;
     text-align: center;
+    line-height: normal;
 }
 
-.escape-ouvert .ouvert-barre{
+.escape-ouvert .ouvert-barre {
     position: relative;
     margin: 0 auto;
     top: 3rem;
@@ -280,7 +291,7 @@ html::-webkit-scrollbar-track {
     background: var(--bouton);
 }
 
-.ouvert-card{
+.ouvert-card {
     margin: 0 auto;
     width: 100%;
     height: auto;
@@ -288,7 +299,7 @@ html::-webkit-scrollbar-track {
     padding: 20px 100px;
 }
 
-.ouvert-card .ouvert-text{  
+.ouvert-card .ouvert-text {
     margin: 0 auto;
     width: 40%;
     margin-top: 3rem;
@@ -298,20 +309,21 @@ html::-webkit-scrollbar-track {
     line-height: normal;
 }
 
- 
- .ouvert-icon{
-     display: flex;
-     flex-wrap: wrap;
-     align-items: center;
-     justify-content: space-evenly;
-     gap: -5rem;
- }
- 
- .ouvert-icon img{
-     width: 12rem;
-     
- }
- .ouvert-icon {
+
+.ouvert-icon {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: -5rem;
+}
+
+.ouvert-icon img {
+    width: 12rem;
+
+}
+
+.ouvert-icon {
     text-align: center;
     margin-bottom: 8rem;
- }
+}

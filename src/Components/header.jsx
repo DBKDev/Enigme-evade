@@ -43,18 +43,18 @@ const [userRegister, setUserRegister] = useState(false)
             <body>
                 {/* Header menu avec bouton Login */}                
                 <header>
-                <a href="#"><img src={process.env.PUBLIC_URL + "/Assets/logo_site.png"} alt="" /></a>
+                <a href="/"><img src={process.env.PUBLIC_URL + "/Assets/logo_site.png"} alt="" /></a>
                     <nav className="navigation">
                         <a href="/" className='laclasse-a'>ACCUEIL</a>
-                        <a href="#" className='laclasse-a'>TARIF</a>
-                        <a href="#"className='laclasse-a'>RÉSERVER</a>
+                        <a href="#Tarif" className='laclasse-a'>TARIF</a>
+                        <a href="/ReservationSite"className='laclasse-a'>RÉSERVER</a>
                         <a href="/contact" className='laclasse-a'>CONTACT</a>                        
                         <button className="btnLogin-popup" ><a href="/Domicile" className='laclasse-btn-a'>DOMICILE</a></button>
                         <i id="user-icon" className='bx bxs-user bx-md'onClick={()=>{
                             setUserContent(prevUserContent =>!prevUserContent)
                             setUserRegister(false)
                         }}></i>
-                        <span>M.NOM</span>
+                        <span><a href="/monCompte" className='laclasse-btn-a'>M.NOM</a></span>
                         <div className={userContent==true?`user-container active`:`user-container`}>
                             <h2>Connectez-vous</h2>
                             <input type="email" placeholder="E-mail" />
