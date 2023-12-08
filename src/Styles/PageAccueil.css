@@ -75,7 +75,7 @@ html::-webkit-scrollbar-track {
 /* Partie des cartes et du text */
 .escape-card {
     margin: 0 auto;
-    width: 90%;
+    width: 80%;
     height: 50rem;
     background: var(--background);
 }
