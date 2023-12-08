@@ -73,6 +73,7 @@ background: var(--bouton);
 
 .devisProFlex input[type='text'],.devisProFlex input[type='number'],.devisProFlex input[type='date'],.devisProFlex input[type='email'] , .devisProFlex select {
 
+.devisProFlex input[type='text'], .devisProFlex  input[type='number'],.devisProFlex  input[type='date'],.devisProFlex  input[type='email'] ,.devisProFlex  select, .devisProMargin {
     background-color: #c9c8c8;
     margin: 13px;
     width: 60%;

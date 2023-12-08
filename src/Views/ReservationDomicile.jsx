@@ -2,13 +2,14 @@ import React from 'react';
 import '../Styles/ReservationDomicile.css'
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
+import Agenda from '../Components/Agenda';
 
 const ReservationDomicile = () => {
     return (<>
 
         <Header />
         <div className="divDomicileReservation">
-            <h2>DEVIS PROFESSIONNEL</h2>
+            <h2>RESERVATION A DOMICILE</h2>
             <div className="DomicileReservationSouligne"></div>
         </div>
         <div className='DomicileReservationContainer'>
@@ -31,7 +32,7 @@ const ReservationDomicile = () => {
                     <option value="difficile">Difficile</option>
                 </select>
 
-
+                <div className='agendaDom'><Agenda/></div>
                 <div className='nomPrenomDomicile'>
                     <input type="text" placeholder='Nom' name={'nom'} />
                     <input type="text" placeholder='Prénom' name={'prenom'} />
