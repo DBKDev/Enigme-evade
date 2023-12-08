@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "../Styles/Header.css"
+import { Link } from 'react-router-dom';
 
 const Header = () => {  
 const [userContent, setUserContent] = useState(false)
@@ -44,11 +45,11 @@ const [userRegister, setUserRegister] = useState(false)
                 <header>
                 <a href="#"><img src={process.env.PUBLIC_URL + "/Assets/logo_site.png"} alt="" /></a>
                     <nav className="navigation">
-                        <a href="#">ACCUEIL</a>
-                        <a href="#">TARIF</a>
-                        <a href="#">RÉSERVER</a>
-                        <a href="/contact">CONTACT</a>
-                        <button className="btnLogin-popup">DOMICILE</button>
+                        <a href="/" className='laclasse-a'>ACCUEIL</a>
+                        <a href="#" className='laclasse-a'>TARIF</a>
+                        <a href="#"className='laclasse-a'>RÉSERVER</a>
+                        <a href="/contact" className='laclasse-a'>CONTACT</a>                        
+                        <button className="btnLogin-popup" ><a href="/Domicile" className='laclasse-btn-a'>DOMICILE</a></button>
                         <i id="user-icon" className='bx bxs-user bx-md'onClick={()=>{
                             setUserContent(prevUserContent =>!prevUserContent)
                             setUserRegister(false)

@@ -1,12 +1,15 @@
 import React from 'react';
 import '../Styles/DevisPro.css'
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
 
 const DevisProfessionnel = () => {
     return (<>
-    
-        <div className='divProMargin'>
-            <h2>DEVIS PROFESSIONNELS</h2>
-            <div className='devisProSouligne'></div>
+       
+        <Header/>
+        <div className="divProMargin">
+            <h2>DEVIS PROFESSIONNEL</h2>
+            <div className="devisProSouligne"></div>
         </div>
         <div className='devisProContainer'>
         <form className='devisProFlex'>
@@ -33,17 +36,20 @@ const DevisProfessionnel = () => {
                 <option value="intermediaire">Intermédiaire</option>
                 <option value="difficile">Difficile</option>
             </select>
-
-            <input type="text" placeholder='Nom'/>
-            <input type="text" placeholder='Prénom'/>
+            <div className='nomPrenomDevisPro'> 
+            <input type="text" placeholder='Nom' name={'nom'}/>
+            <input type="text" placeholder='Prénom' name={'prenom'}/>
+            </div>
             <input type="email"  placeholder='Adresse email'/>
             <input type="text" placeholder="Lieu de l'événement"/>
             <input type="number" placeholder='Numéro de téléphone' maxLength={'10'}/>
-            <input type="text" placeholder='Date souhaitée' />
+            <input type="date" placeholder='Date souhaitée' />
 
             <input type="submit" value={'ENVOYER'} />
         </form>
         </div>
+
+        <Footer/>
     </>);
 }
  

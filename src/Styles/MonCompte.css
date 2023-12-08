@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    border: none;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+html::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--bouton-hover);
+    border-radius: 3rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--background-noir);
+}
+:root{
+    --background : #EEEEEE;
+    --background-noir : #212121;
+    --bouton : #FF3838;
+    --bouton-hover : #c32626;
+    --text-gris: #333333;
+    --text-blanc: #FFFFFF;    
+}
+/* DIV qui contient tous  */
+.containerprincipaleMonCompte{
+    width: 70%;
+    height: auto;
+    margin: 20px auto;
+    margin-top: 9rem;
+}
+.monCompteMargin h2{
+    padding: 10px;
+    font-size: 250%;
+    font-weight: regular;
+}
+.monCompteMargin p{
+    margin-left: 85%;
+    font-size: 140%;
+}
+.MonCompteSouligne{
+    width: 350px;
+    height: 0.4rem;
+    background: var(--bouton);
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+.MonCompteContainer{
+    display: flex;
+    flex-flow: row nowrap;
+    border: 2px solid black;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.MonCompteFlex{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 50%;
+    padding: 10px 20px;
+}
+.MonCompteFlex *{
+    width: 80%;
+    font-size: 100%;
+    border-radius: 8px;
+}
+.MonCompteFlex input{
+    background-color: #c9c8c8;
+    margin: 15px;
+    height: 45px;
+    width: 80%;
+}
+.MonCompteFlex input[value='MODIFIER MES INFOS']{
+    background: var(--bouton);
+    padding: 1px ;
+    width: 35%;
+    height: 45px !important;
+    color: var(--text-blanc);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.reservationMonCompte input[value='SUPPRIMER MON COMPTE']{
+    background: var(--bouton);
+    padding: 1px ;
+    width: 266px;
+    height: 45px;
+    color: var(--text-blanc);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 100%;
+    margin-bottom: 10px;
+    margin-top: 19.5%;
+}
+.reservationMonCompte{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    margin-left: 14%;
+    height: auto;
+    margin-right: 20px;
+}
+.reservationMonCompte .info-resa{
+    width: 75%;
+    height: 30%;
+    background-color: #c9c8c8;
+}
+.reservationMonCompte h3{
+    margin: 40px 20px 20px;
+    align-self: center;
+    font-size: 130%;
+}
+.reservationMonCompte button {
+    width: 25%;
+    height: 45px;
+    background: var(--bouton);
+    color: var(--text-blanc);
+    font-size: 100%;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+.reservationMonCompte input[value='SUPPRIMER MON COMPTE']:hover{
+    background: var(--bouton-hover);
+}
+.reservationMonCompte button:hover{
+    background: var(--bouton-hover);
+    cursor: pointer;
+}
+.MonCompteFlex input[value='MODIFIER MES INFOS']:hover{
+    background: var(--bouton-hover);
+}
+
+@media screen and (max-width: 1900px){
+    .reservationMonCompte input[value='SUPPRIMER MON COMPTE']{
+        margin-top: 90px;
+        width: 214px;
+    }
+}
+@media screen  and (max-width:1250px){
+    .reservationMonCompte button {
+        font-size: 85%;
+        height: 8%;
+        width: 35%;
+    }
+    .reservationMonCompte input[value='SUPPRIMER MON COMPTE']{
+        width: 193px;
+        height: 40px;
+        font-size: 85%;
+        margin-top: 72.5%;
+    }
+    .reservationMonCompte h3{
+        margin: 20px 10px 20px 10px;
+        align-self: center;
+        font-size: 110%;
+    }
+    .reservationMonCompte .info-resa{
+        width: 80%;
+        height: 22%;
+        background-color: #c9c8c8;
+    }
+    .MonCompteFlex input[value='MODIFIER MES INFOS']{
+        width: 193px;
+        height: 40px !important;
+        font-size: 85% !important;
+    }
+    .monCompteMargin p{
+        margin-left: 80%;
+        font-size: 120%;
+    }
+    .MonCompteFlex input{
+        margin: 15px;
+        height: 50px;
+        font-size: 100%;
+    }
+}
+
+@media screen  and (max-width:750px){
+    .MonCompteContainer{
+        align-items: center;
+        flex-flow: column wrap;
+    }
+    .monCompteMargin h2{
+        font-size: 180%;
+    }
+    .monCompteMargin p{
+        margin-left: 78%;
+        font-size: 120%;
+    }
+    .MonCompteSouligne{
+        width: 240px;
+    }
+    .MonCompteFlex{
+        width: 100%;
+    }
+    .reservationMonCompte{
+        display: flex;
+        flex-direction: row nowrap;
+        border-top : 1px solid black;
+        width: 100%;
+        margin: 10px 0px;
+    }
+    .reservationMonCompte h3{
+        margin: 0px;
+        font-size: 120%;
+        padding-top: 10px;
+    }
+    .reservationMonCompte .info-resa{
+        width: 300px;
+        height: 150px;
+        margin-top: 20px;
+    }
+    .reservationMonCompte button {
+        width: 140px;
+        height: 40px;
+        font-size: 120%;
+    }
+    .MonCompteFlex input[value='MODIFIER MES INFOS']{
+        width: 250px;
+        height: 50px !important;
+        font-size: 120% !important;
+    }
+    .reservationMonCompte input[value='SUPPRIMER MON COMPTE']{
+        width: 250px;
+        height: 50px;
+        font-size: 120%;
+    }
+    .monCompteMargin p{
+        margin-left: 70%;
+        font-size: 100%;
+    }
+}
