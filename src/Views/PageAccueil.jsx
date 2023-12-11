@@ -41,7 +41,7 @@ const PageAccueil = () => {
                 <div className="espace-card-jeu" >
                 {images.map((image) => {
                         return (
-                                <img className='imgJeu' src={process.env.PUBLIC_URL + `/Images/photos_escape/${image.image_nom}.png`} alt={image.alt} width={'300px'} height={'200px'} />
+                                <img src={process.env.PUBLIC_URL + `/Images/photos_escape/${image.image_nom}.png`} alt={image.alt} width={'300px'} height={'200px'} className='img-jeu'/>
                         )
                     })}
 
@@ -63,7 +63,7 @@ const PageAccueil = () => {
                     vehicula vel eu risus. Suspendisse rutrum ac arcu id ultricies.
                     Quisque suscipit diam massa, a placerat tellus varius vel. Sed maximus
                     auctor vestibulum. </p>
-                <div className="espace-card-tarif">
+                <div className="espace-card">
                     <div className='taris-icon'>
                         <div className="item1"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/3pers.png"} alt="" />
                             <p className='nbpers-tarif'>3 personnes</p>
@@ -110,7 +110,7 @@ const PageAccueil = () => {
                     vehicula vel eu risus. Suspendisse rutrum ac arcu id ultricies.
                     Quisque suscipit diam massa, a placerat tellus varius vel. Sed maximus
                     auctor vestibulum. </p>
-                <div className="espace-card-tarif">
+                <div className="espace-card">
                     <div className='tous-icon'>
                         <div className="item1"><img src={process.env.PUBLIC_URL + "/Images/icon-famille.png"} alt="" />
                             <p className='nbpers-tous'>FAMILLE & AMIS</p>
@@ -147,7 +147,7 @@ const PageAccueil = () => {
                     vehicula vel eu risus. Suspendisse rutrum ac arcu id ultricies.
                     Quisque suscipit diam massa, a placerat tellus varius vel. Sed maximus
                     auctor vestibulum. </p>
-                <div className="espace-card-tarif">
+                <div className="espace-card">
                     <div className='ouvert-icon'>
                         <div className="item1"><img src={process.env.PUBLIC_URL + "/Images/icon-sourd.png"} alt="" /></div>
                         <div className="item2"><img src={process.env.PUBLIC_URL + "/Images/icon-enceinte.png"} alt="" /></div>
