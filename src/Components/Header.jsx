@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import "../Styles/Header.css"
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import inscriptionService from '../Services/inscriptionService';
 import connexionService from '../Services/connexionService';
+import GlobalContext from './GlobalContext';
+import testService from '../Services/testService';
 
 const Header = () => {  
+
+
+const [test, setTest] = useState([]);
+const {userEmail, setUserEmail} = useContext(GlobalContext);
 const [userContent, setUserContent] = useState(false)
 const [userRegister, setUserRegister] = useState(false)
 
@@ -18,10 +24,12 @@ const [inscription, setInscription] = useState({
     numero:"",
 });
 
+
 const [connexion, setConnexion] = useState({
     emailco : "",
     passwordco : "",
 });
+
 
 const handleChangeConn = (e) => {
     const { name, value } = e.currentTarget;
@@ -39,6 +47,8 @@ const handleConn = async (e) => {
     e.preventDefault();
     try {
         const response = await connexionService.AddConnexion(connexion);
+        // user = table , user_email = donnée de la table
+        setUserEmail(response.data.user.user_email)
         toast.success('Connexion réussie');
     } catch (error) {
         console.log(error);
@@ -55,6 +65,22 @@ const handleAdd = async (e) => {
        console.log(e); 
     }
 }
+
+// TEST POUR LA CONNEXION :
+
+const fetchUserByEmail = async () => {
+    try {
+        const response = await testService.getUserByEmail(userEmail)
+        setTest(response.data)
+
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+useEffect (() => {
+    fetchUserByEmail()
+},[])
     
 
     return (
@@ -79,7 +105,7 @@ const handleAdd = async (e) => {
                             setUserContent(prevUserContent =>!prevUserContent)
                             setUserRegister(false)
                         }}></i>
-                        <span><a href="/monCompte" className='laclasse-btn-a'>M.NOM</a></span>
+                        <span><a href="/monCompte" className='laclasse-btn-a'>{test.user_nom}</a></span>
                         <div className={userContent==true?`user-container active`:`user-container`}>
                             <h2>Connectez-vous</h2>
                             <input type="email" name='emailco' placeholder="E-mail" value={connexion.emailco} onChange={handleChangeConn}/>

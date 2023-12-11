@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Globalcontext from '../src/Components/GlobalContext';
 import Modal from 'react-modal';
+import { useState , useEffect} from "react";
 import PageAccueil from "./Views/PageAccueil";
 import PageContact from "./Views/PageContact";
 import MonCompte from "./Views/MonCompte";
@@ -23,8 +25,21 @@ Modal.setAppElement('#root');
 
 
 function App() {
+
+  // Initialisez l'état userEmail en récupérant la valeur depuis le localStorage
+ const [userEmail, setUserEmail] = useState(window.localStorage.getItem('userEmail'));
+
+// Effet pour mettre à jour le localStorage lorsque userId change
+useEffect(() => {
+  if (userEmail !== null) {
+    localStorage.setItem('userEmail', userEmail.toString());
+  } else {
+    // Si userEmail est null, supprimez-le du localStorage
+    localStorage.removeItem('userEmail');
+  }
+}, [userEmail]);
   return <>
-  
+     <Globalcontext.Provider value={{userEmail, setUserEmail}}>
     <BrowserRouter>  
       <Routes>
       <Route path={"/"} element={<PageAccueil/>} />     
@@ -41,6 +56,7 @@ function App() {
         <Route path={"/reservationSite"} element={<ReservationSite/>}/>
       </Routes>
     </BrowserRouter>
+    </Globalcontext.Provider>
     <ToastContainer
         position="bottom-right"
         autoClose={5000}
