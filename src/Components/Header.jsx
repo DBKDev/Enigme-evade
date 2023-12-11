@@ -1,35 +1,60 @@
 import React, { useState } from 'react';
 import "../Styles/Header.css"
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import inscriptionService from '../Services/inscriptionService';
+import connexionService from '../Services/connexionService';
 
 const Header = () => {  
 const [userContent, setUserContent] = useState(false)
 const [userRegister, setUserRegister] = useState(false)
 
+const [inscription, setInscription] = useState({
+    nom : "",
+    prenom : "",
+    email : "",
+    password : "",
+    adresse : "",
+    numero:"",
+});
 
+const [connexion, setConnexion] = useState({
+    emailco : "",
+    passwordco : "",
+});
 
+const handleChangeConn = (e) => {
+    const { name, value } = e.currentTarget;
+    setConnexion({...connexion, [name]: value });
+    console.log(connexion);
+}
 
-    // const userBtn = document.querySelector("#user-icon");
-    // const liencreate = document.querySelector("#create");
-    // const userContentRegister = document.querySelector('.user-container-register');
-    // const connect = document.querySelector("#connexion")
-    
-    
-    // userBtn.addEventListener("click", ()=>{
-    //     userContent.classList.toggle("active")
-    //     userContentRegister.classList.remove("active")
-    // });
-    
-    // liencreate.addEventListener("click", ()=>{
-    //     userContentRegister.classList.toggle("active")
-    //     userContent.classList.remove("active")
-    // });
-    
-    // connect.addEventListener("click", ()=>{
-    //     userContent.classList.toggle("active")
-    //     userContentRegister.classList.remove("active")
-    // })
-    
+const handleChange = (e) => {
+    const { name, value } = e.currentTarget;
+    setInscription({...inscription, [name]: value });
+    console.log(inscription);
+}
+
+const handleConn = async (e) => {
+    e.preventDefault();
+    try {
+        const response = await connexionService.AddConnexion(connexion);
+        toast.success('Connexion réussie');
+    } catch (error) {
+        console.log(error);
+        toast.error('connection échouée')
+    }
+}
+
+const handleAdd = async (e) => {
+    e.preventDefault();
+    try {
+        const response = await inscriptionService.AddInscription(inscription)
+        toast.success("Votre inscription est confirmé M." + inscription.nom + inscription.prenom)
+    } catch (e) {
+       console.log(e); 
+    }
+}
     
 
     return (
@@ -57,9 +82,9 @@ const [userRegister, setUserRegister] = useState(false)
                         <span><a href="/monCompte" className='laclasse-btn-a'>M.NOM</a></span>
                         <div className={userContent==true?`user-container active`:`user-container`}>
                             <h2>Connectez-vous</h2>
-                            <input type="email" placeholder="E-mail" />
-                            <input type="password" placeholder="Mot de passe" />
-                            <input className="btn-user" type="submit" value="Connexion" />
+                            <input type="email" name='emailco' placeholder="E-mail" value={connexion.emailco} onChange={handleChangeConn}/>
+                            <input type="password" name='passwordco' value={connexion.passwordco} placeholder="Mot de passe" onChange={handleChangeConn}/>
+                            <input className="btn-user" type="submit" value="Connexion" onClick={handleConn}/>
                             <p>Mot de passe oublié ? <a href="#" className='laclasse-a'>Redefinir mot de passe</a></p>
                             <p>Pas de compte ? <a href="#" id="create" className='laclasse-a' onClick={()=>{
                                 setUserContent(false)
@@ -68,13 +93,13 @@ const [userRegister, setUserRegister] = useState(false)
                         </div>
                         <div className={userRegister==true?`user-container-register active`:`user-container-register`}>
                             <h2>Inscrivez-vous</h2>
-                            <input type="email" placeholder="E-mail" />
-                            <input type="password" placeholder="Mot de passe" />
-                            <input type="text" placeholder="Nom" />
-                            <input type="text" placeholder="Prénom" />
-                            <input type="text" placeholder="Votre adresse" />
-                            <input type="number" placeholder="Numéro de téléphone" />
-                            <input className="btn-user" type="submit" value="S'inscrire" />
+                            <input type="email" name='email' value={inscription.email} placeholder="E-mail" onChange={handleChange} />
+                            <input type="password" name='password' value={inscription.password} placeholder="Mot de passe" onChange={handleChange}/>
+                            <input type="text" name='nom' value={inscription.nom} placeholder="Nom" onChange={handleChange}/>
+                            <input type="text" name='prenom' value={inscription.prenom} placeholder="Prénom" onChange={handleChange}/>
+                            <input type="text" name='adresse' value={inscription.adresse} placeholder="Votre adresse" onChange={handleChange}/>
+                            <input type="number"  name='numero' value={inscription.numero} placeholder="Numéro de téléphone" onChange={handleChange}/>
+                            <input className="btn-user"  type="submit"  value="S'inscrire" onClick={handleAdd}/>
                             <p>Déjà un compte ? <a href="#" id="connexion" className='laclasse-a' onClick={()=>{
                                 setUserContent(true)
                                 setUserRegister(false)

@@ -11,6 +11,8 @@ import InterfaceAdmin from "./Views/InterfaceAdmin";
 import ReservationDomicile from "./Views/ReservationDomicile";
 import DevisProfessionnel from "./Views/DevisProfessionnel";
 import ReservationSite from "./Views/ReservationSite";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 
 // Définir l'élément racine de votre application pour le composant Modal
@@ -40,6 +42,18 @@ function App() {
         <Route path={"/reservationSite"} element={<ReservationSite/>}/>
       </Routes>
     </BrowserRouter>
+    <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+    />
 
   </>
 }
