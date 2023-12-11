@@ -73,7 +73,7 @@ html::-webkit-scrollbar-track {
 }
 
 /* Partie des cartes et du text */
-.escape-card-jeu {
+.escape-card {
     margin: 0 auto;
     width: 80%;
     height: 50rem;
@@ -90,6 +90,14 @@ html::-webkit-scrollbar-track {
     position: relative;
     top: 4rem;
     margin: 30px 10px;
+    box-shadow: 5px 5px 5px #666;
+    border-radius: 5px;
+}
+
+.espace-card-jeu .img-jeu:hover{
+    transform: scale(1.4);
+    cursor: pointer;
+    z-index: 1;
 }
 
 .escape-card .escape-text-jeu {
@@ -153,7 +161,7 @@ html::-webkit-scrollbar-track {
 
 /* Icon + prix Tarif */
 
-.espace-card-tarif {
+.espace-card {
     margin-top: 5rem;
 }
 

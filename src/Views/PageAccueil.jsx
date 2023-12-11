@@ -63,7 +63,7 @@ const PageAccueil = () => {
                     vehicula vel eu risus. Suspendisse rutrum ac arcu id ultricies.
                     Quisque suscipit diam massa, a placerat tellus varius vel. Sed maximus
                     auctor vestibulum. </p>
-                <div className="espace-card-tarif">
+                <div className="espace-card">
                     <div className='taris-icon'>
                         <div className="item1"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/3pers.png"} alt="" />
                             <p className='nbpers-tarif'>3 personnes</p>
