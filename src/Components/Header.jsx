@@ -4,10 +4,15 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import inscriptionService from '../Services/inscriptionService';
 import connexionService from '../Services/connexionService';
+import { useContext } from 'react';
+import GlobalContext from '../Context/GlobalContext';
 
 const Header = () => {  
-const [userContent, setUserContent] = useState(false)
-const [userRegister, setUserRegister] = useState(false)
+const {setUserEmail} = useContext(GlobalContext);
+const [userContent, setUserContent] = useState(false);
+const [userRegister, setUserRegister] = useState(false);
+const [connexionResult, setConnexionResult] = useState(null);
+const [error, setError] = useState(null);
 
 const [inscription, setInscription] = useState({
     nom : "",
@@ -40,6 +45,7 @@ const handleConn = async (e) => {
     try {
         const response = await connexionService.AddConnexion(connexion);
         toast.success('Connexion réussie');
+        console.log(response.data.user.user_email);
     } catch (error) {
         console.log(error);
         toast.error('connection échouée')

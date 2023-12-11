@@ -13,6 +13,8 @@ import DevisProfessionnel from "./Views/DevisProfessionnel";
 import ReservationSite from "./Views/ReservationSite";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import GlobalContext from "./Context/GlobalContext";
+import { useState, useEffect } from 'react';
 
 
 // Définir l'élément racine de votre application pour le composant Modal
@@ -24,8 +26,21 @@ Modal.setAppElement('#root');
 
 
 function App() {
+
+  // Initialisez l'état userId en récupérant la valeur depuis le localStorage
+  const [userEmail, setUserEmail] = useState(window.localStorage.getItem('userEmail'));
+
+  // Effet pour mettre à jour le localStorage lorsque userId change
+  useEffect(() => {
+    if (userEmail !== null) {
+      localStorage.setItem('userEmail', userEmail.toString());
+    } else {
+      // Si userId est null, supprimez-le du localStorage
+      localStorage.removeItem('userEmail');
+    }
+  }, [userEmail]);
   return <>
-  
+    <GlobalContext.Provider value={{userEmail, setUserEmail}}>
     <BrowserRouter>  
       <Routes>
       <Route path={"/"} element={<PageAccueil/>} />     
@@ -42,6 +57,7 @@ function App() {
         <Route path={"/reservationSite"} element={<ReservationSite/>}/>
       </Routes>
     </BrowserRouter>
+    </GlobalContext.Provider>
     <ToastContainer
         position="bottom-right"
         autoClose={5000}
