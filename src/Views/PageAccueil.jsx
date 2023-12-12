@@ -4,7 +4,6 @@ import Header from '../Components/Header';
 import "../Styles/PageAccueil.css"
 import Footer from '../Components/Footer';
 import imageAccueil from '../Services/imageAccueil';
-import prixJoueurService from '../Services/prixJoueurService';
 const PageAccueil = () => {
 
     const [images, setImages] = useState([]);
@@ -22,7 +21,7 @@ const PageAccueil = () => {
 
     useEffect(() => {
         fetchImageAccueil();
-    }, []);
+    },  []);
 
     // Divise le tableau en deux parties
     const imageDom = images.slice(0, 4);

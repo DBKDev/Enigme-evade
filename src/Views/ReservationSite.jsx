@@ -5,9 +5,10 @@ import Footer from '../Components/Footer';
 import Agenda from '../Components/Agenda';
 import { toast } from 'react-toastify';
 import reservationsiteservice from '../Services/reservationSiteService';
+import reservationSiteService from '../Services/reservationSiteService';
 
 const ReservationSite = () => {
-    
+    const [getSalleSite, setGetSalleSite] = useState([]);
     const [resSite, setResSite] = useState({        
         res_type : "site",
         res_dateHeure: "2023-12-09 00:00:00",
@@ -37,6 +38,24 @@ const ReservationSite = () => {
         }
     }
 
+
+// Afficher le nom des salles:
+
+    const getSalleSites = async () => {
+        try {
+            const response = await reservationSiteService.GetNomsite()
+            setGetSalleSite(response.data);
+            console.log(response);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    useEffect(()=>{
+        getSalleSites()
+    },[])
+
+
     return ( <>
 
         
@@ -51,14 +70,16 @@ const ReservationSite = () => {
         <form className='reservationSiteFlex'>
             <select id="escapeGameSite">
                 <option disabled selected name="salle_id" value={resSite.salle_id} onChange={handleChangeRes}>Choisissez votre escape Game</option>
-                <optgroup label="Sur Site">
-                    <option value="site-1">Escape Game 1</option>
-                    <option value="site-2">Escape Game 2</option>
-                    <option value="site-3">Escape Game 3</option>
-                    <option value="site-4">Escape Game 4</option>
+                <optgroup label="Sur Site">                    
+                    {getSalleSite.map(salle => {
+                        return (
+                            <option key={salle.salle_id} value={salle.salle_id} >{salle.salle_nom}</option>                                                                                  
+                        )
+                    })}
                 </optgroup>
+                
             </select>
-
+            
     
             <select id="difficultySite" name="res_niveau" value={resSite.res_niveau} onChange={handleChangeRes} >
                 <option value="" disabled selected >Choisissez votre difficulté</option>
@@ -89,7 +110,7 @@ const ReservationSite = () => {
         </form>
         </div>
         
-        {/* <Footer/> */}
+        <Footer/>
     
     </> );
 }
