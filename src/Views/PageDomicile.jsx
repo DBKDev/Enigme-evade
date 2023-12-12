@@ -104,7 +104,7 @@ const PageDomicile = () => {
                     <div className="item1">
                         <p className='domicileacti-nbpers-tous'>PARTICULIERS</p>
                         <p className='domicile-prixpers-tous'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in lectus ligula. </p>
-                        <button type="button" className='domicile-btn-reserver'><a href="/reservationDomicile" className='laclasse-btn-a'>RÉSERVER</a></button>
+                        <a href="/reservationDomicile" className='laclasse-btn-a'><button type="button" className='domicile-btn-reserver'>RÉSERVER</button></a>
                     </div>
                 </div>
             </div>
@@ -133,7 +133,7 @@ const PageDomicile = () => {
                     <div className="item1">
                         <p className='domicileacti-nbpers-tous'>ENTREPRISES</p>
                         <p className='domicile-prixpers-tous'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in lectus ligula. </p>
-                        <button type="button" className='domicile-btn-devis'><a href="/devisPro" className='laclasse-btn-a'>DEVIS</a></button>
+                        <a href="/devisPro" className='laclasse-btn-a'><button type="button" className='domicile-btn-devis'>DEVIS</button></a>
                     </div>
                 </div>
             </div>
