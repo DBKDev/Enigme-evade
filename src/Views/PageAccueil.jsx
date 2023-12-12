@@ -4,7 +4,6 @@ import Header from '../Components/Header';
 import "../Styles/PageAccueil.css"
 import Footer from '../Components/Footer';
 import imageAccueil from '../Services/imageAccueil';
-import prixJoueurService from '../Services/prixJoueurService';
 const PageAccueil = () => {
 
     const [images, setImages] = useState([]);
@@ -19,9 +18,9 @@ const PageAccueil = () => {
         }
     }
 
-    useEffect (() => {
+    useEffect(() => {
         fetchImageAccueil();
-    },[]);
+    }, []);
     return <>
         <Header />
         <Slideaccueil />
@@ -42,14 +41,16 @@ const PageAccueil = () => {
                     Quisque suscipit diam massa, a placerat tellus varius vel. Sed maximus
                     auctor vestibulum. </p>
                 <div className="espace-card-jeu" >
-                {images.map((image) => {
+                    {images.map((image) => {
                         return (
-                                <img src={process.env.PUBLIC_URL + `/Images/photos_escape/${image.image_nom}.png`} alt={image.alt} width={'300px'} height={'200px'} className='img-jeu'/>
+                            <img src={process.env.PUBLIC_URL + `/Images/photos_escape/${image.image_nom}.png`} alt={image.alt} width={'300px'} height={'200px'} className='img-jeu'></img>
+
                         )
+
                     })}
 
                 </div>
-                   
+
 
             </div>
             {/* Tarif */}
@@ -137,7 +138,7 @@ const PageAccueil = () => {
                 </div>
             </div>
 
-{/* Lieux ouvert à tous */}
+            {/* Lieux ouvert à tous */}
             <div className="escape-ouvert">
                 <div className='ouvert-titre'>
                     <h1 className="ouvert-infos">LIEUX OUVERT À TOUS !</h1>
@@ -162,9 +163,9 @@ const PageAccueil = () => {
             </div>
 
 
-        <Footer/>
+            <Footer />
         </div>
-        
+
     </>;
 }
 

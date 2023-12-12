@@ -90,8 +90,19 @@ html::-webkit-scrollbar-track {
     position: relative;
     top: 4rem;
     margin: 30px 10px;
-    box-shadow: 5px 5px 5px #666;
+    border-radius: 8px;
+    border: 4px solid var(--text-blanc);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
 }
+.espace-card-jeu .img-jeu:hover{
+    transform:scale(1.1);
+    transition: 0.3s ease-in-out;
+    border: 2px solid var(--text-blanc);
+    
+}
+
 
 .escape-card .escape-text-jeu {
     position: relative;
