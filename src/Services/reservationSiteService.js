@@ -8,6 +8,11 @@ function AddReservationSite(resSite){
     })
 }
 
+function GetNomsite(){
+    return axios.get("http://127.0.0.1:3000/nomsite");
+}
+
 export default{
-    AddReservationSite
+    AddReservationSite,
+    GetNomsite
 }
