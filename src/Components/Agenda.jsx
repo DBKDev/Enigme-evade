@@ -1,9 +1,9 @@
-import React, { useMemo , useState} from 'react';
+import React, { useMemo, useState } from 'react';
 import '@mobiscroll/react/dist/css/mobiscroll.min.css';
-import { Datepicker, setOptions, localeFr } from '@mobiscroll/react';
-import '../Styles/agenda.css'
+import { Datepicker } from '@mobiscroll/react';
+import '../Styles/agenda.css';
 
-function Agenda() {
+function Agenda({ onDateSelect }) {
   const myLabels = useMemo(() => {
     return [{
       start: '2023-12-08',
@@ -14,21 +14,30 @@ function Agenda() {
 
   const myInvalid = useMemo(() => {
     return [
-        {
-          d: 'M', // Jour de la semaine : 'M' correspond à lundi
-          start: '00:00', // Heure de début (minuit)
-          end: '24:00' // Heure de fin (minuit)
-        }
-      ];
-      
-    }, []);
-    
-    const [startDate, setStartDate] = useState(null);
+      {
+        d: 'M',
+        start: '00:00',
+        end: '24:00'
+      }
+    ];
+  }, []);
 
-    const isWeekday = (date) => {
-      const day = new Date(date).getDay();
-      return day !== 0 && day !== 6; // 0 pour dimanche, 6 pour samedi
-    };
+  const [startDate, setStartDate] = useState(null);
+
+  const isWeekday = (date) => {
+    const day = new Date(date).getDay();
+    return day !== 0 && day !== 6;
+  };
+
+  const handleDateChange = (date) => {
+    // Format the date to ISO string before passing it to the parent component
+    const formattedDate = date.toISOString();
+    
+    setStartDate(date);
+    // Pass the formatted date to the parent component
+    onDateSelect(formattedDate);
+    console.log(formattedDate);
+  };
 
   return (
     <Datepicker
@@ -42,7 +51,12 @@ function Agenda() {
       invalid={myInvalid}
       timeFormat="HH:mm"
       selected={startDate}
-      onChange={(date) => setStartDate(date)}
+      onChange={(event, inst) => {
+        const selectedDate = inst.getVal();
+        setStartDate(selectedDate);
+        // Pass the selected date to the parent component
+        onDateSelect(selectedDate);
+      }}
       filterDate={isWeekday}
       placeholderText="Select a weekday"
     />

@@ -1,60 +1,68 @@
-import React, {useEffect, useState} from 'react';
-import '../Styles/ReservationDomicile.css'
+import React, { useEffect, useState } from 'react';
+import '../Styles/ReservationDomicile.css';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import Agenda from '../Components/Agenda';
 import { toast } from 'react-toastify';
-import resaDomService from '../Services/reservationDomicile'
+import resaDomService from '../Services/reservationDomicile';
+import { format, addMinutes } from 'date-fns';
 
 const ReservationDomicile = () => {
+  const [salleDomicile, setSalleDomicile] = useState([]);
+  const [resaDom, setResaDom] = useState({
+    res_type: 'domicile',
+    nom_jeu: '',
+    dom_id: '',
+    date: '',
+    montant: '200',
+    nom: '',
+    prenom: '',
+    email: '',
+    lieu: '',
+    numero: '',
+    nbJoueur: '',
+  });
 
-    const [salleDomicile, setSalleDomicile] = useState([]);
-    const [resaDom, setResaDom] = useState({
-        res_type : "domicile",
-        nom_jeu : "",
-        dom_id : "",
-        date : "2023-12-09 00:00:00",
-        montant : "200",
-        nom :"",
-        prenom : "",
-        email : "",
-        lieu: "",
-        numero:"",
-        nbJoueur : "",
-    });
+  const handleAgendaDateSelect = (selectedDate) => {
+    setResaDom({ ...resaDom, date: selectedDate });
+  };
 
-    const handleChange = (e) => {
-        const { name, value } = e.currentTarget;
-        setResaDom ({...resaDom, [name]: value });
-        console.log(resaDom);
+  const handleChange = (e) => {
+    const { name, value } = e.currentTarget;
+    setResaDom({ ...resaDom, [name]: value });
+  };
+
+  const formattedDate = resaDom.date ? format(new Date(resaDom.date), 'dd-MM-yyyy HH:mm:ss') : '';
+  
+  const handleResaDom = async (e) => {
+    e.preventDefault();
+    console.log(resaDom);
+    try {
+        const response = await resaDomService.newReservation(resaDom)
+        console.log(response);
+        toast.success("Votre réservation est confirmée pour le " + formattedDate)
+    } catch (e) {
+        console.log(e);
+        toast.error("Erreur lors de la réservation")
     }
+}
 
-    const handleResaDom = async (e) => {
-        e.preventDefault();
-        console.log(resaDom);
-        try {
-            const response = await resaDomService.newReservation(resaDom)
-            console.log(response);
-            toast.success("Votre réservation est confirmée M.")
-        } catch (e) {
-            console.log(e);
-            toast.error("Erreur lors de la réservation")
-        }
+
+  const getSalleDom = async () => {
+    try {
+      const response = await resaDomService.salleDom();
+      setSalleDomicile(response.data);
+      console.log(response);
+    } catch (e) {
+      console.log(e);
     }
+  };
 
-    const getSalleDom = async () => {
-        try {
-            const response = await resaDomService.salleDom()
-            setSalleDomicile(response.data);
-            console.log(response);
-        } catch (e) {
-            console.log(e);
-        }
-    }
+  useEffect(() => {
+    getSalleDom();
+  }, []);
 
-    useEffect(() => {
-        getSalleDom()
-    },[]);
+    
     
     return (<>
 
@@ -84,7 +92,7 @@ const ReservationDomicile = () => {
                     <option value="difficile">Difficile</option>
                 </select>
 
-                <div className='agendaDom'><Agenda/></div>
+                <div className='agendaDom'><Agenda onDateSelect={(selectedDate) => handleAgendaDateSelect(selectedDate)} /></div>
                 <div className='nomPrenomDomicile'>
                     <input  type="text" placeholder='Nom' name={'nom'} value={resaDom.nom} onChange={handleChange}/>
                     <input type="text" placeholder='Prénom' name={'prenom'} value={resaDom.prenom} onChange={handleChange}/>

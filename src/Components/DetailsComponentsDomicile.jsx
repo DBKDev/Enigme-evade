@@ -137,7 +137,7 @@ const DetailsComponentDom = () => {
                         </div>
                     </div>
                 </div>
-                <button className="bouton_reservation_details" type="submit">RÉSERVER MAINTENANT</button>
+                <a href='/reservationDomicile'><button className="bouton_reservation_details" type="submit">RÉSERVER MAINTENANT</button></a>
             </div>
 
             {modalOpen && (
