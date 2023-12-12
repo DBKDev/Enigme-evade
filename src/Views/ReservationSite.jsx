@@ -19,13 +19,13 @@ const ReservationSite = () => {
         res_prenom:"",
         res_numero:"",
         res_montant:"200",
-        salle_id:"2",
+        salle_id:"",
     });
 
     const handleChangeRes = (e) => {
         const {name, value} = e.currentTarget;
         setResSite({...resSite, [name] : value})
-        console.log(resSite)
+        console.log(resSite);
     }
 
     const handleAddRes = async (e) => {
