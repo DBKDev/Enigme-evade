@@ -60,9 +60,9 @@ html::-webkit-scrollbar-track {
     justify-content: space-around;
     width: 70%;
     height: auto;
-    border: 2px solid black;
-    margin: 5px auto;
-    gap : 30px
+    padding: 1rem 1rem 5%;
+    border: 1px solid black;
+    margin: 5px auto;    
 }
 .mesReservationSite{
     display: flex;
@@ -156,4 +156,8 @@ html::-webkit-scrollbar-track {
         margin: 5px auto;
         gap : 1px
     }
+}
+
+.Titre-réservationsite{
+    margin-top: 4rem;
 }

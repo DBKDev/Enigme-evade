@@ -1,81 +1,34 @@
 import React from 'react';
 import Header from '../Components/Header';
 import '../Styles/MesReservations.css'
+import TableComponent from "../Components/TableauSiteComponent"
+import TableComponentDomicile from '../Components/TableauDomicileComponent';
 
 
 const MesReservations = () => {
-    return (<>
-    <Header/>
-    <div className="containerPrincipalReservation">
-        <div className="marginReservation">
-            <h2>Mes réservations</h2>
-            <div className="souligneReservation"></div>
-            <p>Nom Prénom</p>
-        </div>
-        <div className="containerReservationFlex">
-            <div className="mesReservationSite">
-                <h3>sur site</h3>
-                <div>
-                    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                </div>
-                <div>
-                <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                </div>
-                <div>
-                <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                </div>
-                <div>
-                <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                </div>
+
+
+    return <>
+        <Header />
+        <div className="containerPrincipalReservation">
+            <div className="marginReservation">
+                <h2>Mes réservations</h2>
+                <div className="souligneReservation"></div>
+                <p>Nom Prénom</p>
             </div>
-            <div className="mesReservationDomicile">
-                <h3>à domicile</h3>
+            <div className="containerReservationFlex">
                 <div>
-                <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
+                    <h1 className='Titre-réservationsite'>Réservation sur Place</h1>
+                    <TableComponent />
                 </div>
+
                 <div>
-                <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                </div>
-                <div>
-                <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                </div>
-                <div>
-                <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
+                    <h1 className='Titre-réservationsite'>Réservation à Domicile</h1>
+                    <TableComponentDomicile />
                 </div>
             </div>
         </div>
-    </div>
-    </> );
+    </>;
 }
- 
+
 export default MesReservations;

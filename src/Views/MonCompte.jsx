@@ -28,7 +28,7 @@ const MonCompte = () => {
                 <div className="reservationMonCompte">
                     <h3>Dernières réservations</h3>
                     <div className='info-resa'></div>
-                    <button>Voir plus</button>
+                    <button><a href="/MesReservations" className='laclasse-btn-a'>Voir plus</a></button>
                     <input type="submit" value={'SUPPRIMER MON COMPTE'} />
                 </div>
             </div>
