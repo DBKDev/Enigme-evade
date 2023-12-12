@@ -4,9 +4,12 @@ import Header from '../Components/Header';
 import "../Styles/PageAccueil.css"
 import Footer from '../Components/Footer';
 import imageAccueil from '../Services/imageAccueil';
+import prixJoueurService from '../Services/prixJoueurService';
 const PageAccueil = () => {
 
     const [images, setImages] = useState([]);
+
+    // Affichage des images pour les 8 dernières nouveautées
     const fetchImageAccueil = async () => {
         try {
             const response = await imageAccueil.getImageAccueil();
@@ -65,29 +68,30 @@ const PageAccueil = () => {
                     auctor vestibulum. </p>
                 <div className="espace-card">
                     <div className='taris-icon'>
+                        
                         <div className="item1"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/3pers.png"} alt="" />
                             <p className='nbpers-tarif'>3 personnes</p>
-                            <p className='prixpers-tarif'>80€/personne</p>
+                            <p className='prixpers-tarif'>40€/personne</p>
                         </div>
                         <div className="item2"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/4pers.png"} alt="" />
                             <p className='nbpers-tarif'>4 personnes</p>
-                            <p className='prixpers-tarif'>78€/personne</p>
+                            <p className='prixpers-tarif'>38€/personne</p>
                         </div>
                         <div className="item3"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/5pers.png"} alt="" />
                             <p className='nbpers-tarif'>5 personnes</p>
-                            <p className='prixpers-tarif'>75€/personne</p>
+                            <p className='prixpers-tarif'>35€/personne</p>
                         </div>
                         <div className="item4"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/6pers.png"} alt="" />
                             <p className='nbpers-tarif'>6 personnes</p>
-                            <p className='prixpers-tarif'>73€/personne</p>
+                            <p className='prixpers-tarif'>33€/personne</p>
                         </div>
                         <div className="item5"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/7pers.png"} alt="" />
                             <p className='nbpers-tarif'>7 personnes</p>
-                            <p className='prixpers-tarif'>70€/personne</p>
+                            <p className='prixpers-tarif'>30€/personne</p>
                         </div>
                         <div className="item6"><img src={process.env.PUBLIC_URL + "/Images/logo_pers/8pers.png"} alt="" />
                             <p className='nbpers-tarif'>8 personnes</p>
-                            <p className='prixpers-tarif'>65€/personne</p>
+                            <p className='prixpers-tarif'>28€/personne</p>
                         </div>
 
                     </div>
