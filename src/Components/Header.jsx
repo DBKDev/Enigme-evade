@@ -11,7 +11,7 @@ const Header = () => {
 
 
 const [test, setTest] = useState([]);
-const {userEmail, setUserEmail} = useContext(GlobalContext);
+const {userEmail, setUserEmail, user, setUser} = useContext(GlobalContext);
 const [userContent, setUserContent] = useState(false)
 const [userRegister, setUserRegister] = useState(false)
 
@@ -49,6 +49,7 @@ const handleConn = async (e) => {
         const response = await connexionService.AddConnexion(connexion);
         // user = table , user_email = donnée de la table
         setUserEmail(response.data.user.user_email)
+        setUser(response.data.user)
         toast.success('Connexion réussie');
         console.log(response.data.user.user_email);
     } catch (error) {
@@ -95,18 +96,18 @@ useEffect (() => {
             <body>
                 {/* Header menu avec bouton Login */}                
                 <header>
-                <a href="/"><img src={process.env.PUBLIC_URL + "/Assets/logo_site.png"} alt="" /></a>
+                <Link to="/"><img src={process.env.PUBLIC_URL + "/Assets/logo_site.png"} alt="" /></Link>
                     <nav className="navigation">
-                        <a href="/" className='laclasse-a'>ACCUEIL</a>
-                        <a href="#Tarif" className='laclasse-a'>TARIF</a>
-                        <a href="/ReservationSite"className='laclasse-a'>RÉSERVER</a>
-                        <a href="/contact" className='laclasse-a'>CONTACT</a>                        
+                        <Link to="/" className='laclasse-a'>ACCUEIL</Link>
+                        <Link to="#Tarif" className='laclasse-a'>TARIF</Link>
+                        <Link to="/ReservationSite"className='laclasse-a'>RÉSERVER</Link>
+                        <Link to="/contact" className='laclasse-a'>CONTACT</Link>                        
                         <button className="btnLogin-popup" ><a href="/Domicile" className='laclasse-btn-a'>DOMICILE</a></button>
                         <i id="user-icon" className='bx bxs-user bx-md'onClick={()=>{
                             setUserContent(prevUserContent =>!prevUserContent)
                             setUserRegister(false)
                         }}></i>
-                        <span><a href="/monCompte" className='laclasse-btn-a'>{test.user_nom}</a></span>
+                        <span><Link to="/monCompte" className='laclasse-btn-a'>{test.user_nom}</Link></span>
                         <div className={userContent==true?`user-container active`:`user-container`}>
                             <h2>Connectez-vous</h2>
                             <input type="email" name='emailco' placeholder="E-mail" value={connexion.emailco} onChange={handleChangeConn}/>
@@ -127,10 +128,10 @@ useEffect (() => {
                             <input type="text" name='adresse' value={inscription.adresse} placeholder="Votre adresse" onChange={handleChange}/>
                             <input type="number"  name='numero' value={inscription.numero} placeholder="Numéro de téléphone" onChange={handleChange}/>
                             <input className="btn-user"  type="submit"  value="S'inscrire" onClick={handleAdd}/>
-                            <p>Déjà un compte ? <a href="#" id="connexion" className='laclasse-a' onClick={()=>{
+                            <p>Déjà un compte ? <Link to="#" id="connexion" className='laclasse-a' onClick={()=>{
                                 setUserContent(true)
                                 setUserRegister(false)
-                            }}>Se Connecter</a></p>
+                            }}>Se Connecter</Link></p>
                         </div>
                     </nav>
                     <i className='bx bxs-cog'></i>
