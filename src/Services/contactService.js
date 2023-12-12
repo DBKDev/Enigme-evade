@@ -1,7 +1,16 @@
 import axios from "axios";
 
-function sendEmail(formData){
-    return axios.post('http://127.0.0.1:3000/submit', formData,
+function sendEmailContact(formData){
+    return axios.post('http://127.0.0.1:3000/contact', formData,
+    {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+}
+
+function sendEmailDevis(formData){
+    return axios.post('http://127.0.0.1:3000/devis', formData,
     {
         headers: {
             'Content-Type': 'application/json'
@@ -10,5 +19,6 @@ function sendEmail(formData){
 }
 
 export default {
-    sendEmail
+    sendEmailContact,
+    sendEmailDevis
 };

@@ -50,6 +50,7 @@ const handleConn = async (e) => {
         // user = table , user_email = donnée de la table
         setUserEmail(response.data.user.user_email)
         toast.success('Connexion réussie');
+        console.log(response.data.user.user_email);
     } catch (error) {
         console.log(error);
         toast.error('connection échouée')
