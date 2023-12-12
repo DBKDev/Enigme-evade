@@ -31,6 +31,7 @@ function App() {
 
   // Initialisez l'état userEmail en récupérant la valeur depuis le localStorage
  const [userEmail, setUserEmail] = useState(window.localStorage.getItem('userEmail'));
+ const [user, setUser] = useState(null);
 
 // Effet pour mettre à jour le localStorage lorsque userId change
 useEffect(() => {
@@ -42,7 +43,7 @@ useEffect(() => {
   }
 }, [userEmail]);
   return <>
-     <Globalcontext.Provider value={{userEmail, setUserEmail}}>
+     <Globalcontext.Provider value={{userEmail, setUserEmail, user, setUser}}>
     <BrowserRouter>  
       <Routes>
       <Route path={"/"} element={<PageAccueil/>} />     
