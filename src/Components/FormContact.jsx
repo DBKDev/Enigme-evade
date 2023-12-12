@@ -39,7 +39,7 @@ const FormContact = () => {
         e.preventDefault();
 
         try {
-            const response = contactService.sendEmail(formData);
+            const response = contactService.sendEmailContact(formData);
             console.log('Formulaire soumis avec succès!');
             // Réinitialiser le formulaire après la soumission réussie
             setFormData({

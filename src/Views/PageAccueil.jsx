@@ -10,15 +10,22 @@ const PageAccueil = () => {
     const fetchImageAccueil = async () => {
         try {
             const response = await imageAccueil.getImageAccueil();
+            console.log(response.data);
             setImages(response.data);
         } catch (e) {
             console.log(e);
         }
     }
 
-    useEffect (() => {
+    useEffect(() => {
         fetchImageAccueil();
-    },[]);
+    }, []);
+
+    // Divise le tableau en deux parties
+    const imageDom = images.slice(0, 4);
+    const imageSite = images.slice(4);
+
+
     return <>
         <Header />
         <Slideaccueil />
@@ -39,14 +46,25 @@ const PageAccueil = () => {
                     Quisque suscipit diam massa, a placerat tellus varius vel. Sed maximus
                     auctor vestibulum. </p>
                 <div className="espace-card-jeu" >
-                {images.map((image) => {
-                        return (
-                                <img src={process.env.PUBLIC_URL + `/Images/photos_escape/${image.image_nom}.png`} alt={image.alt} width={'300px'} height={'200px'} className='img-jeu'/>
-                        )
-                    })}
+                    {/* Les quatre premières images */}
+                    {imageDom.map((image, index) => (
+                        <div key={index} className="card">
+                            <a href={`/domicile/${image.domicile_id}`}>
+                                <img src={process.env.PUBLIC_URL + `/Images/photos_escape/${image.image_nom}.png`} alt={image.alt} width={'300px'} height={'200px'} className='img-jeu' />
+                            </a>
+                        </div>
+                    ))}
 
+                    {/* Les autres images */}
+                    {imageSite.map((image, index) => (
+                        <div key={index} className="card-dom">
+                            <a href={`/site/${image.salle_id}`}>
+                                <img src={process.env.PUBLIC_URL + `/Images/photos_escape/${image.image_nom}.png`} alt={image.alt} width={'300px'} height={'200px'} className='img-jeu' />
+                            </a>
+                        </div>
+                    ))}
                 </div>
-                   
+
 
             </div>
             {/* Tarif */}
@@ -133,7 +151,7 @@ const PageAccueil = () => {
                 </div>
             </div>
 
-{/* Lieux ouvert à tous */}
+            {/* Lieux ouvert à tous */}
             <div className="escape-ouvert">
                 <div className='ouvert-titre'>
                     <h1 className="ouvert-infos">LIEUX OUVERT À TOUS !</h1>
@@ -158,9 +176,9 @@ const PageAccueil = () => {
             </div>
 
 
-        <Footer/>
+            <Footer />
         </div>
-        
+
     </>;
 }
 

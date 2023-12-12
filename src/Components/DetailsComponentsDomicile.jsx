@@ -1,23 +1,54 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../Styles/Details.css';
 import { useState } from 'react';
+import escapeService from '../Services/escapeService';
+import imageDetailsService from '../Services/imageDetailsService';
+import { useParams } from 'react-router-dom';
 
 
-const DetailsComponent = () => {
+const DetailsComponentDom = () => {
+    const { id } = useParams();
+    const [escape, setEscape] = useState([]);
+    const [imageDetails, setImageDetails] = useState([]);
 
-        //déclarer le modal
-        const [modalOpen, setModalOpen] = useState(false);
-        const [selectedImage, setSelectedImage] = useState(null);
-      
-        const openModal = (imageSrc) => {
-          setSelectedImage(imageSrc);
-          setModalOpen(true);
-        };
-      
-        const closeModal = () => {
-          setSelectedImage(null);
-          setModalOpen(false);
-        };
+    const fetchDetailsDomicile = async () => {
+        try {
+            const response = await escapeService.getDetailsDomicile(id);
+            console.log(response.data.escapeSite[0]);
+            setEscape(response.data.escapeSite[0]);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const fetchDetailsDomicileImage = async () => {
+        try {
+            const response = await imageDetailsService.getImageDomicile(id);
+            console.log(response.data.imageDetails);
+            setImageDetails(response.data.imageDetails);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        fetchDetailsDomicile();
+        fetchDetailsDomicileImage();
+    }, []);
+
+    //déclarer le modal
+    const [modalOpen, setModalOpen] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const openModal = (imageSrc) => {
+        setSelectedImage(imageSrc);
+        setModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setSelectedImage(null);
+        setModalOpen(false);
+    };
 
 
     return <>
@@ -25,17 +56,17 @@ const DetailsComponent = () => {
         <div className='details_all_container'>
 
             <div className='titre_container'>
-                <h2 className='titre_details'>Titre escape</h2>
+                <h2 className='titre_details'>{escape.dom_nom}</h2>
                 <div className='separation_titre_details'></div>
             </div>
 
             <div className='site_domicile'>
-                <p className='site_domicile_text'>SUR SITE</p>
+                <p className='site_domicile_text'>A DOMICILE</p>
             </div>
             <div className='details_container'>
 
                 {/* DIV QUI CONTIENT LES 3 IMAGES */}
-                <div className='image_container'>
+                {/* <div className='image_container'>
                     <div className='img_container'>
                         <div className='img1' onClick={() => openModal(process.env.PUBLIC_URL + "/Images/photos_escape/throne1_low.png")}>
                             <img src={process.env.PUBLIC_URL + "/Images/photos_escape/throne1_low.png"} alt="" />
@@ -47,6 +78,16 @@ const DetailsComponent = () => {
                             <img src={process.env.PUBLIC_URL + "/Images/photos_escape/throne3_low.png"} alt="" />
                         </div>
                     </div>
+                </div> */}
+
+                <div className='image_container'>
+                    <div className='img_container'>
+                        {imageDetails.map((imageName, index) => (
+                            <div key={index} className={`img${index + 1}`} onClick={() => openModal(process.env.PUBLIC_URL + `/Images/photos_escape/${imageName.image_nom}.png`)}>
+                                <img src={process.env.PUBLIC_URL + `/Images/photos_escape/${imageName.image_nom}.png`} alt="" />
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 {/* DIV QUI CONTIENT LE SYNOPSIS ET L'OBJECTIF */}
@@ -57,9 +98,7 @@ const DetailsComponent = () => {
                         </div>
                         <div className='synopsis_text'>
                             <p>
-                                Plongez dans les intrigues de Westeros en tant que prétendants au Trône de Fer.
-                                Résolvez des énigmes, déjouez des complots et trouvez le chemin vers le trône pour
-                                revendiquer votre droit au pouvoir.
+                                {escape.dom_synopsis}
                             </p>
                         </div>
                     </div>
@@ -70,9 +109,7 @@ const DetailsComponent = () => {
                         </div>
                         <div className='objectif_text'>
                             <p>
-                                Conquérir le Trône de Fer en surmontant les obstacles et en résolvant les énigmes
-                                dans un décor inspiré de Game of Thrones. Le temps presse, l'hiver arrive.
-                                Êtes-vous prêt à jouer le jeu?
+                                {escape.dom_objectif}
                             </p>
                         </div>
                     </div>
@@ -104,19 +141,19 @@ const DetailsComponent = () => {
             </div>
 
             {modalOpen && (
-          <div className='modal' onClick={closeModal}>
-            <span className='close' onClick={(e) => { e.stopPropagation(); closeModal(); }}>
-              &times;
-            </span>
-            <div className='modal-content-container'>
-              <img className='modal-content' src={selectedImage} alt="Modal" />
-            </div>
-          </div>
-        )}
+                <div className='modal' onClick={closeModal}>
+                    <span className='close' onClick={(e) => { e.stopPropagation(); closeModal(); }}>
+                        &times;
+                    </span>
+                    <div className='modal-content-container'>
+                        <img className='modal-content' src={selectedImage} alt="Modal" />
+                    </div>
+                </div>
+            )}
 
         </div>
 
     </>;
 }
 
-export default DetailsComponent;
+export default DetailsComponentDom;

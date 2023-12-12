@@ -94,11 +94,7 @@ html::-webkit-scrollbar-track {
     border-radius: 5px;
 }
 
-.espace-card-jeu .img-jeu:hover{
-    transform: scale(1.4);
-    cursor: pointer;
-    z-index: 1;
-}
+
 
 .escape-card .escape-text-jeu {
     position: relative;
@@ -347,3 +343,4 @@ html::-webkit-scrollbar-track {
     text-align: center;
     margin-bottom: 8rem;
 }
+
