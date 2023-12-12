@@ -11,7 +11,7 @@ const ReservationSite = () => {
     const [getSalleSite, setGetSalleSite] = useState([]);
     const [resSite, setResSite] = useState({        
         res_type : "site",
-        res_dateHeure: "2023-12-09 00:00:00",
+        res_dateHeure: "2023-12-01 10:00:00",
         res_nbPersonne:"",
         res_niveau:"",
         user_email:"",
@@ -19,7 +19,7 @@ const ReservationSite = () => {
         res_prenom:"",
         res_numero:"",
         res_montant:"200",
-        salle_id:"2",
+        id_salle:"",
     });
 
     const handleChangeRes = (e) => {
@@ -68,8 +68,8 @@ const ReservationSite = () => {
         </div>
         <div className='reservationSiteContainer'>
         <form className='reservationSiteFlex'>
-            <select id="escapeGameSite">
-                <option disabled selected name="salle_id" value={resSite.salle_id} onChange={handleChangeRes}>Choisissez votre escape Game</option>
+            <select  id="escapeGameSite" name="id_salle" value={resSite.id_salle} onChange={handleChangeRes}>
+                <option value="" disabled selected  >Choisissez votre escape Game</option>
                 <optgroup label="Sur Site">                    
                     {getSalleSite.map(salle => {
                         return (
