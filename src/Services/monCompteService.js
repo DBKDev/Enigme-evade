@@ -15,8 +15,13 @@ function getLastRes(email){
     return axios.get("http://127.0.0.1:3000/monCompte/"+email)
 }
 
+function deleteCompte(email){
+    return axios.delete("http://127.0.0.1:3000/monCompte/"+email)
+}
+
 export default {
     ModifCompte,
     getUserByEmail,
     getLastRes,
+    deleteCompte
 }
