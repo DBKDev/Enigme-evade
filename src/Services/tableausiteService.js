@@ -1,11 +1,11 @@
 import axios from "axios";
 
-function getTableauSite (){
-    return axios.get("http://127.0.0.1:3000/tableausite");
+function getTableauSite (email){
+    return axios.get("http://127.0.0.1:3000/tableausite/" + email);
 }
 
-function getTableauDomicile (){
-    return axios.get("http://127.0.0.1:3000/tableausite/tableaudomicile");
+function getTableauDomicile (email){
+    return axios.get("http://127.0.0.1:3000/tableausite/tableaudomicile/" + email);
 }
 
 export default{
