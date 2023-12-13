@@ -6,6 +6,7 @@ import Footer from '../Components/Footer';
 import monCompteService from '../Services/monCompteService';
 import GlobalContext from '../Components/GlobalContext';
 import { format } from 'date-fns';
+import { Link } from 'react-router-dom';
 
 const MonCompte = () => {
   const { userEmail, user, setUser } = useContext(GlobalContext);
@@ -21,6 +22,17 @@ const MonCompte = () => {
       setLastRes(response.data);
     } catch (e) {
       console.log(e);
+    }
+  }
+
+  const deleteCompte = async () => {
+    try {
+      const response = await monCompteService.deleteCompte(userEmail);
+      toast.success("Votre compte a bien été supprimé");
+      console.log(response);
+    } catch (e) {
+      console.log(e);
+      toast.error("Votre compte n'a pas été supprimé");
     }
   }
   useEffect(() => {
@@ -119,7 +131,7 @@ const MonCompte = () => {
                 Voir plus
               </a>
             </button>
-            <input type='submit' value={'SUPPRIMER MON COMPTE'} />
+            <Link to={"/"}><input type='submit' value={'SUPPRIMER MON COMPTE'} className='laclasse-btn-a' onClick={deleteCompte} /></Link>
           </div>
         </div>
       </div>

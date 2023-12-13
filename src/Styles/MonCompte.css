@@ -83,6 +83,7 @@ html::-webkit-scrollbar-track {
 .MonCompteFlex input{
     background-color: #c9c8c8;
     margin: 15px;
+    padding: 10px;
     height: 45px;
     width: 80%;
 }
