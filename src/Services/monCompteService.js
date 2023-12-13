@@ -11,7 +11,12 @@ function getUserByEmail(email) {
     return axios.get("http://127.0.0.1:3000/monCompte/"+email+'/compte')
 }
 
+function getLastRes(email){
+    return axios.get("http://127.0.0.1:3000/monCompte/"+email)
+}
+
 export default {
     ModifCompte,
-    getUserByEmail
+    getUserByEmail,
+    getLastRes,
 }

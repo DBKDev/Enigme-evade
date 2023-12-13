@@ -44,7 +44,7 @@ const MonCompte = () => {
                     <form className='MonCompteFlex'>
                         <input type="text" placeholder='Nom' name='user_nom' value={user.user_nom} onChange={handleChange}/>
                         <input type="text" placeholder='Prénom' name='user_prenom' value={user.user_prenom} onChange={handleChange}/>
-                        <input type="email" placeholder='Adresse email' type="hidden" name='user_email' value={user.user_email} onChange={handleChange}/>
+                        <input type="email" placeholder='Adresse email'  name='user_email' value={user.user_email} onChange={handleChange}/>
                         <input type="tel" placeholder='Numéro de téléphone' maxLength={10} name='user_telephone' value={user.user_telephone} onChange={handleChange}/>
                         <input type="text" placeholder='adresse domicile' name='user_adresse' value={user.user_adresse} onChange={handleChange}/>
                         <input type="submit" value={'MODIFIER MES INFOS'} onClick={handleAdd}/>

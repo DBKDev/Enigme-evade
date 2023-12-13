@@ -107,7 +107,7 @@ useEffect (() => {
                             setUserContent(prevUserContent =>!prevUserContent)
                             setUserRegister(false)
                         }}></i>
-                        <span><Link to="/monCompte" className='laclasse-btn-a'>{test.user_nom}</Link></span>
+                        <span><Link to={`/monCompte`} className='laclasse-btn-a'>{test.user_nom}</Link></span>
                         <div className={userContent==true?`user-container active`:`user-container`}>
                             <h2>Connectez-vous</h2>
                             <input type="email" name='emailco' placeholder="E-mail" value={connexion.emailco} onChange={handleChangeConn}/>
