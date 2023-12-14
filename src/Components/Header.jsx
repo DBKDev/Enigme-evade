@@ -34,13 +34,11 @@ const [connexion, setConnexion] = useState({
 const handleChangeConn = (e) => {
     const { name, value } = e.currentTarget;
     setConnexion({...connexion, [name]: value });
-    console.log(connexion);
 }
 
 const handleChange = (e) => {
     const { name, value } = e.currentTarget;
     setInscription({...inscription, [name]: value });
-    console.log(inscription);
 }
 
 const handleConn = async (e) => {
