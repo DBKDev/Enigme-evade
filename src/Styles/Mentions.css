@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    border: none;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+html::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--bouton-hover);
+    border-radius: 3rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--background-noir);
+}
+
+:root {
+    --background: #EEEEEE;
+    --background-noir: #212121;
+    --bouton: #FF3838;
+    --bouton-hover: #c32626;
+    --text-gris: #333;
+    --text-blanc: #FFFFFF;
+}
+
+.Bloc-content{
+    display: flex;
+    justify-content: center;
+    margin-top: 8%;
+    margin-bottom: 4%;
+    line-height: 1.6;
+    font-weight: 500;
+    
+}
+
+.content-mentions{
+    display: flex;
+    flex-direction: column;
+}
+
+.content-mentions{
+background: var(--text-blanc);
+border-radius: 8px;
+width: 60%;
+height: auto;
+text-align: left;
+padding: 80px;
+}
+
+.Titre-mentions{
+text-align: center;
+margin-bottom: 4%;
+}

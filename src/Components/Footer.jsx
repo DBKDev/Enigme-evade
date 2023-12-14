@@ -19,8 +19,8 @@ const Footer = () => {
                 <div className="footer-box">
                     <h2>Informations</h2>
                     <ul>
-                        <li><a href="#">Conditions de vente</a></li>
-                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="/ConditionsVente">Conditions de vente</a></li>
+                        <li><a href="/MentionsLegal">Mentions légales</a></li>
                         <li><a href="#">Support</a></li>
                         <li><a href="/contact">Nous contacter</a></li>
                         <li><a href="/localisation">Voir le plan</a></li>

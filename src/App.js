@@ -20,7 +20,9 @@ import PageDetailsDomicile from "./Views/PageDetailsDomicile";
 import MonCompte2 from "./Views/MonCompte2";
 import PageAdminUpdateDomicile from "./Views/AdminUpdateDomicile"
 import PageAdminUpdateSite from "./Views/AdminUpdateSite";
-
+import MentionsLegal from "./Views/MentionsLegal";
+import PolitiqueConfidentialite from "./Views/PolitiqueConfidentialité";
+import ConditionsVente from "./Views/ConditionsVente";
 
 // Définir l'élément racine de votre application pour le composant Modal
 Modal.setAppElement('#root');
@@ -64,6 +66,9 @@ useEffect(() => {
         <Route path={"/reservationSite"} element={<ReservationSite/>}/>
         <Route path={"/modifSite/:id"} element={<PageAdminUpdateSite/>}/>
         <Route path={"/modifDom/:id"} element={<PageAdminUpdateDomicile/>}/>
+        <Route path={"/MentionsLegal"} element={<MentionsLegal/>}/>
+        <Route path={"/PolitiqueConfidentialite"} element={<PolitiqueConfidentialite />}/>
+        <Route path={"/ConditionsVente"} element={<ConditionsVente />}/>
       </Routes>
     </BrowserRouter>
     </Globalcontext.Provider>
