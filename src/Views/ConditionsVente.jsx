@@ -41,7 +41,7 @@ const ConditionsVente = () => {
                 <h2>5. Contact</h2>
 
                 <p>Pour toute question ou préoccupation concernant nos conditions de vente,
-                    veuillez nous contacter à l'adresse e-mail suivante : <a href="mailto:thbialasik@fcdigital.fr">thbialasik@fcdigital.fr</a>.</p>
+                    veuillez nous contacter à l'adresse e-mail suivante : <a href="mailto:tbialasik@fcdigital.fr">tbialasik@fcdigital.fr</a>.</p>
 
             </div>
         </div>

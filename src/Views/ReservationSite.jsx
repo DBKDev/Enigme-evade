@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect,useState, useContext } from 'react'
 import "../Styles/ReservationSite.css"
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
@@ -7,15 +7,17 @@ import { toast } from 'react-toastify';
 import reservationsiteservice from '../Services/reservationSiteService';
 import reservationSiteService from '../Services/reservationSiteService';
 import { format, addMinutes } from 'date-fns';
+import GlobalContext from '../Components/GlobalContext';
 
 const ReservationSite = () => {
     const [getSalleSite, setGetSalleSite] = useState([]);
+    const {userEmail, user, setUser} = useContext(GlobalContext);
     const [resSite, setResSite] = useState({        
         res_type : "site",
         res_dateHeure: "",
         res_nbPersonne:"",
         res_niveau:"",
-        user_email:"tbialasik@fcdigital.fr",
+        user_email:"",
         res_nom:"",
         res_prenom:"",
         res_numero:"",
@@ -100,7 +102,7 @@ const ReservationSite = () => {
             <input type="text" placeholder='Nom' name='res_nom' value={resSite.res_nom} onChange={handleChangeRes}/>
             <input type="text" placeholder='Prénom' name='res_prenom' value={resSite.res_prenom} onChange={handleChangeRes}/>
             </div>
-            <input type="email"  name="user_email" placeholder='Adresse email' value={resSite.user_email} onChange={handleChangeRes}/>
+            <input type="email"  name="user_email" placeholder='Adresse email' value={resSite.res_email} onChange={handleChangeRes}/>
             <input type="number" name="res_numero" placeholder='Numéro de téléphone' maxLength={'10'} value={resSite.res_numero} onChange={handleChangeRes}/>
             
             <select name="res_nbPersonne" id="nbJoueurSite" value={resSite.res_nbPersonne} onChange={handleChangeRes}>
