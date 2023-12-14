@@ -102,6 +102,17 @@ const Header = () => {
         }
     }
 
+
+const handleChangeConn = (e) => {
+    const { name, value } = e.currentTarget;
+    setConnexion({...connexion, [name]: value });
+}
+
+const handleChange = (e) => {
+    const { name, value } = e.currentTarget;
+    setInscription({...inscription, [name]: value });
+}
+
     const disconnectUser = () => {
         // Clear stored user data on logout
         localStorage.removeItem('user');
@@ -113,6 +124,7 @@ const Header = () => {
         navigate('/');
         window.location.reload();
     };
+
 
     const openModal = () => {
         setShowModal(true);

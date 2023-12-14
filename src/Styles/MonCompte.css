@@ -50,6 +50,7 @@ html::-webkit-scrollbar-track {
 .monCompteMargin p{
     margin-left: 85%;
     font-size: 140%;
+    text-align: center;
 }
 .MonCompteSouligne{
     width: 30%!important;

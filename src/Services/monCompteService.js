@@ -24,4 +24,5 @@ export default {
     getUserByEmail,
     getLastRes,
     deleteCompte
+
 }

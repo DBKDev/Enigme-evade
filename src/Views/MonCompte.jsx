@@ -5,11 +5,14 @@ import { toast } from 'react-toastify';
 import Footer from '../Components/Footer';
 import monCompteService from '../Services/monCompteService';
 import GlobalContext from '../Components/GlobalContext';
+import testService from '../Services/testService';
 
 
 const MonCompte = () => {
 
     const {userEmail, user, setUser} = useContext(GlobalContext);
+    const [test, setTest] = useState({});
+    console.log(userEmail);
 
     const handleChange = (e) => {
         const { name, value } = e.currentTarget;
@@ -21,12 +24,39 @@ const MonCompte = () => {
         try {
             const response = await monCompteService.ModifCompte(user)
             toast.success("Votre modification est validé M." + user.user_nom + user.user_prenom)
-            console.log(response);
+            
         } catch (e) {
            console.log(e); 
            toast.error("Votre modification n'est pas validé M." + user.user_nom + user.user_prenom)
         }
     }
+
+    const fetchUserByEmail = async () => {
+        try {
+            const response = await testService.getUserByEmail(userEmail)
+            setTest(response.data)
+            
+    
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    const LastReservation = async () => {
+        try {
+            const response = await monCompteService.getLastReservation(email)
+            console.log(response);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+    
+    useEffect (() => {
+        fetchUserByEmail();
+        LastReservation();
+    },[])
+
+
 
 
     return (
@@ -37,7 +67,7 @@ const MonCompte = () => {
             <div className='monCompteMargin'>
                 <h2>Mon Compte</h2>
                 <div className='MonCompteSouligne'></div>
-                <p>Nom Prenom</p>
+                <p>{test.user_nom} {test.user_prenom}</p>
             </div>
             <div className='MonCompteContainer'>
                 {/* <div className='formulaireMonCompte'>  */}
