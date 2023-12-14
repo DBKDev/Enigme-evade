@@ -54,8 +54,8 @@ const ModifyDomicile = () => {
                 <input
                     className='titre_details_admin'
                     type="text"
-                    id="salle_nom"
-                    name="salle_nom"
+                    id="dom_nom"
+                    name="dom_nom"
                     value={escape.dom_nom || ''}
                     onChange={handleInputChange}
                 />
