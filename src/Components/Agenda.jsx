@@ -14,27 +14,55 @@ function Agenda({ onDateSelect }) {
         const data = response.data;
 
         if (Array.isArray(data)) {
-          const formattedInvalidDays = data.map(item => {
-            const startDateTime = new Date(item.res_dateHeure);
-            console.log(startDateTime);
+          const formattedInvalidDays = data
+            .filter(item => {
+              const startDateTime = new Date(item.res_dateHeure);
+              const isMonday = startDateTime.getDay() === 1; // 1 représente le lundi
+              return !isMonday; // Retourne true pour tous les jours qui ne sont pas des lundis
+            })
+            .map(item => {
+              const startDateTime = new Date(item.res_dateHeure);
+              const disabledHour = startDateTime.getHours();
+              const minutes = startDateTime.getMinutes();
+              const isDisabled = true;
 
-            // Assuming your API response includes disabledHour
-            const disabledHour = startDateTime.getHours(); // Change this to the actual property name in your API response
-            const minutes = startDateTime.getMinutes();
-            const isDisabled = true; // Replace this with your logic to determine if the date is disabled
+              const endDateTime = new Date(item.res_dateHeure);
+              endDateTime.setHours(disabledHour + 1, minutes + 29);
 
-            const endDateTime = new Date(item.res_dateHeure);
-  endDateTime.setHours(disabledHour + 1, minutes + 29); // Add 1 hour and 29 minutes
+              return {
+                d: startDateTime.toISOString(),
+                start: startDateTime,
+                end: endDateTime,
+                disabled: isDisabled,
+              };
+            });
 
-            return {
-              d: startDateTime.toISOString(),
-              start: startDateTime,
-              end: endDateTime,
-              disabled: isDisabled,
-            };
-          });
 
-          setInvalidDays(formattedInvalidDays);
+          // Ajoutez une date pour chaque lundi (désactivation générale des lundis)
+          const generalInvalidMondays = [];
+          const currentDate = new Date('2023-12-11T00:00:00');
+          currentDate.setHours(0, 0, 0, 0);
+
+          for (let i = 0; i < 52; i++) {
+            const monday = new Date(currentDate);
+            monday.setDate(currentDate.getDate() + (1 + 7 - currentDate.getDay()) % 7);
+
+            // Set end time to the end of the day
+            const endOfDay = new Date(monday);
+            endOfDay.setHours(23, 59, 59, 999);
+
+            generalInvalidMondays.push({
+              d: monday.toISOString(),
+              start: monday,
+              end: endOfDay,
+              disabled: true,
+            });
+
+            currentDate.setDate(currentDate.getDate() + 7);
+          }
+          console.log(generalInvalidMondays, 'Invalid');
+
+          setInvalidDays([...formattedInvalidDays, ...generalInvalidMondays]);
         } else {
           console.error('Invalid data format. Expected an array.');
         }

@@ -18,7 +18,7 @@ const MentionsLegal = () => {
 
                 <p>Siège social : 46 rue Faidherbe, Lille (59350), France</p>
                 <p>Numéro de téléphone : 0666666666</p>
-                <p>E-mail de contact : <a href="mailto:thbialasik@fcdigital.fr">thbialasik@fcdigital.fr</a></p>
+                <p>E-mail de contact : <a href="mailto:tbialasik@fcdigital.fr">tbialasik@fcdigital.fr</a></p>
 
                 <p>Représentant légal : [Nom du représentant légal]</p>
 
