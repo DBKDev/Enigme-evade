@@ -6,12 +6,13 @@ import Agenda from '../Components/Agenda';
 import { toast } from 'react-toastify';
 import reservationsiteservice from '../Services/reservationSiteService';
 import reservationSiteService from '../Services/reservationSiteService';
+import { format, addMinutes } from 'date-fns';
 
 const ReservationSite = () => {
     const [getSalleSite, setGetSalleSite] = useState([]);
     const [resSite, setResSite] = useState({        
         res_type : "site",
-        res_dateHeure: "2023-12-01 10:00:00",
+        res_dateHeure: "",
         res_nbPersonne:"",
         res_niveau:"",
         user_email:"tbialasik@fcdigital.fr",
@@ -22,17 +23,23 @@ const ReservationSite = () => {
         id_salle:"",
     });
 
+    const handleAgendaDateSelect = (selectedDate) => {
+        setResSite({ ...resSite, date: selectedDate });
+      };
+
     const handleChangeRes = (e) => {
         const {name, value} = e.currentTarget;
         setResSite({...resSite, [name] : value})
-        console.log(resSite)
+        console.log(resSite);
     }
+
+    const formattedDate = resSite.date ? format(new Date(resSite.date), 'dd-MM-yyyy HH:mm:ss') : '';
 
     const handleAddRes = async (e) => {
         e.preventDefault()
         try {
             const response = await reservationsiteservice.AddReservationSite(resSite)
-            toast.success("Votre inscription est confirmé M." + resSite.res_nom)
+            toast.success("Votre inscription est confirmé M." + formattedDate)
         } catch (e) {
             console.log(e)
         }
@@ -88,7 +95,7 @@ const ReservationSite = () => {
                 <option value="difficile">Difficile</option>
             </select>
 
-                <div className='agendaSite' name="res_date" onChange={handleChangeRes}>{<Agenda/>}</div>
+                <div className='agendaSite' name="res_date"><Agenda onDateSelect={(selectedDate) => handleAgendaDateSelect(selectedDate)} /></div>
             <div className='nomPrenomReservationSite'> 
             <input type="text" placeholder='Nom' name='res_nom' value={resSite.res_nom} onChange={handleChangeRes}/>
             <input type="text" placeholder='Prénom' name='res_prenom' value={resSite.res_prenom} onChange={handleChangeRes}/>

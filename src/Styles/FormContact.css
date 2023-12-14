@@ -155,7 +155,7 @@ body{
   }
 
 /* Style supplémentaire pour les zones de texte */
-textarea {
+.textarea_contact {
     resize: vertical;
     min-height: 100px;
 }
@@ -281,14 +281,14 @@ textarea {
   }
   
   .ReactModal__Content {
-    background-color: #fff;
+    background-color: var(--background-noir);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     max-width: 400px;
     width: 100%;
     text-align: center;
-    color: #000;
+    color: var(--text-blanc);
     visibility: visible !important;
     opacity: 1 !important;
     z-index: 2; /* Valeur de z-index pour placer la modal au-dessus des autres éléments */

@@ -78,14 +78,19 @@ html::-webkit-scrollbar-track {
   /* CSS POUR LE CONTAINER DES DETAILS*/
   /***********************************/
 
+
+
   .details_container{
     border: var(--background-noir) 2px solid;
-    height: 700px;
+    height: auto;
     width: 80%;
     margin: 0 auto;
     margin-bottom: 70px;
+    padding-bottom: 50Px; /* Ou utilisez du padding au lieu de la marge pour un espace vide en bas */
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
     justify-content: center;
     gap: 20px;
     position: relative;
@@ -198,16 +203,17 @@ CSS SYNOPSIS ET OBJ
     display: block;
 }
 
-.synopsis{
+.synopsis {
     margin: 5px;
 }
 
-.synopsis_titre{
+.synopsis_titre {
     font-size: 20px;
-    margin: 20px ;
+    margin: 20px;
 }
 
-.synopsis_text{
+.synopsis_text {
+    /* Styles pour s'ajuster en fonction de la largeur disponible */
     background-color: var(--background-noir);
     border-radius: 8px;
     border: var(--bouton) 2px double;
@@ -217,18 +223,18 @@ CSS SYNOPSIS ET OBJ
     margin: 20px;
 }
 
-.objectif{
-    
+.objectif {
     margin: 10px;
-    margin-top: 50Px;
+    margin-top: 50px;
 }
 
-.objectif_titre{
+.objectif_titre {
     margin: 20px;
     font-size: 20px;
 }
 
-.objectif_text{
+.objectif_text {
+    /* Styles pour s'ajuster en fonction de la largeur disponible */
     border: var(--bouton) dashed 2px;
     border-radius: 8px;
     font-size: 18px;
@@ -255,7 +261,7 @@ CSS TEMPS ET DIFFICULTE
 .temps_container {
     /* height: 100%; */
     margin-top: 50px;
-    width: 80%;
+    width: 45%;
     display: flex;
     flex-direction: column;
 }
@@ -313,6 +319,19 @@ CSS TEMPS ET DIFFICULTE
     max-width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+.synopsis_text{
+    width: 100%;
+}
+
+.objectif_text{
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 500px;
 }
 
 /*************
