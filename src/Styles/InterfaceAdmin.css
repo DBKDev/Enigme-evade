@@ -34,32 +34,113 @@ html::-webkit-scrollbar-track {
     --text-blanc: #FFFFFF;    
 }
 /* DIV qui contient tous  */
-.containerprincipaleMonCompte{
+.containerprincipaleAdmin{
     width: 70%;
     height: auto;
     margin: 20px auto;
     margin-top: 9rem;
+    display: flex;
+    flex-wrap: wrap;
+   
 }
-.monCompteMargin h2{
+.AdminMargin h2{
     padding: 10px;
     font-size: 250%;
     font-weight: regular;
 }
-.monCompteMargin p{
+.AdminMargin p{
     margin-left: 85%;
     font-size: 140%;
 }
-.MonCompteSouligne{
+.AdminSouligne{
     width: 350px;
     height: 0.4rem;
     background: var(--bouton);
     margin-left: 10px;
     margin-bottom: 20px;
 }
-.MonCompteContainer{
+.AdminContainer {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
+    align-items: stretch;
     border: 2px solid black;
     width: 100%;
     padding-top: 20px;
 }
+
+.escape-modification {
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+    display: flex;
+    background: var(--background);
+}
+
+.update-escape-img{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .img-container {
+        position: relative;
+    }
+    
+
+    .card-admin{
+        background-color: #EEEEEE;
+        z-index: 2;
+    }
+
+
+.card-admin .img-jeu-admin {
+    position: relative;
+    margin: 30px 10px;
+    max-width: 100%; 
+    border-radius: 8px;
+    border: 4px solid var(--text-blanc);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    box-sizing: border-box; /* Include border and padding in total width and height calculations */
+}
+
+
+.card-admin .img-jeu-admin:hover{
+    transform:scale(1.1);
+    transition: 0.3s ease-in-out;
+    border: 2px solid var(--text-blanc);
+}
+
+/* Pour que le titre grossisse uniquement quand on overt la carte, pas lui même */
+.img-container:hover .img-title {
+    transform: translate(-50%, -50%) scale(1.1);
+    font-size: 28px; /* Adjust the larger font size on hover */
+    pointer-events: none; /* Disable pointer events on the title during hover to prevent hover effect */
+}
+
+.img-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 10px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    color: #fff; /* Adjust the text color as needed */
+    border-radius: 8px 8px 0 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 24px; 
+    font-weight: 800;/* Adjust the font size as needed */
+    transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out; /* Add transition for smooth effect */
+}
+
+
+
+
+
+
+
