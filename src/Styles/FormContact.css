@@ -155,7 +155,7 @@ body{
   }
 
 /* Style supplémentaire pour les zones de texte */
-textarea {
+.textarea_contact {
     resize: vertical;
     min-height: 100px;
 }

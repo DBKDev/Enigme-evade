@@ -19,6 +19,20 @@ const Header = () => {
     const navigate = useNavigate();
     const [showModal, setShowModal] = useState(false);
 
+    useEffect(() => {
+        const storedUser = localStorage.getItem('user');
+        
+        if (storedUser) {
+            const parsedUser = JSON.parse(storedUser);
+            
+            // Check if parsedUser is truthy before accessing its properties
+            if (parsedUser) {
+                setUserEmail(parsedUser.user_email || '');
+                setUser(parsedUser);
+            }
+        }
+    }, [setUser, setUserEmail]);
+
     const [inscription, setInscription] = useState({
         nom: "",
         prenom: "",
@@ -51,17 +65,19 @@ const Header = () => {
         e.preventDefault();
         try {
             const response = await connexionService.AddConnexion(connexion);
-            // user = table , user_email = donnée de la table
-            setUserEmail(response.data.user.user_email)
-            setUser(response.data.user)
+            setUserEmail(response.data.user.user_email);
+            setUser(response.data.user);
+
+            // Store user data in localStorage on successful login
+            localStorage.setItem('user', JSON.stringify(response.data.user));
+
             toast.success(`Connexion réussie. Bienvenue, ${response.data.user.user_nom} ${response.data.user.user_prenom}!`);
             navigate('/monCompte');
-            console.log(response.data.user.user_email);
         } catch (error) {
             console.log(error);
-            toast.error('connection échouée')
+            toast.error('Connection échouée');
         }
-    }
+    };
 
     const handleAdd = async (e) => {
         e.preventDefault();
@@ -87,6 +103,9 @@ const Header = () => {
     }
 
     const disconnectUser = () => {
+        // Clear stored user data on logout
+        localStorage.removeItem('user');
+
         localStorage.clear();
         setUserEmail("");
         setUser(null);
@@ -109,7 +128,11 @@ const Header = () => {
     };
 
     useEffect(() => {
-        fetchUserByEmail();
+        // Fetch user data only if userEmail is available
+        if (userEmail) {
+            fetchUserByEmail();
+            console.log("user data : ", user);
+        }
     }, [userEmail, user]);
 
 
@@ -171,7 +194,7 @@ const Header = () => {
 
                     {/* Show the cog icon only if the user has admin set to 1 */}
                     {user?.user_admin === 1 && (
-                        <i className='bx bxs-cog'></i>
+                       <Link to={'/interface'}><i className='bx bxs-cog'></i></Link>
                     )}
 
                     {showModal && (
