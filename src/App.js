@@ -18,6 +18,8 @@ import { ToastContainer } from 'react-toastify';
 import GlobalContext from "./Context/GlobalContext";
 import PageDetailsDomicile from "./Views/PageDetailsDomicile";
 import MonCompte2 from "./Views/MonCompte2";
+import PageAdminUpdateDomicile from "./Views/AdminUpdateDomicile"
+import PageAdminUpdateSite from "./Views/AdminUpdateSite";
 
 
 // Définir l'élément racine de votre application pour le composant Modal
@@ -60,6 +62,8 @@ useEffect(() => {
         <Route path={"/reservationDomicile"} element={<ReservationDomicile/>}/>
         <Route path={"/MesReservations"} element={<MesReservations/>}/>
         <Route path={"/reservationSite"} element={<ReservationSite/>}/>
+        <Route path={"/modifSite/:id"} element={<PageAdminUpdateSite/>}/>
+        <Route path={"/modifDom/:id"} element={<PageAdminUpdateDomicile/>}/>
       </Routes>
     </BrowserRouter>
     </Globalcontext.Provider>

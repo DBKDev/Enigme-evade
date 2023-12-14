@@ -321,6 +321,19 @@ CSS TEMPS ET DIFFICULTE
     object-fit: contain;
 }
 
+.synopsis_text{
+    width: 100%;
+}
+
+.objectif_text{
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 500px;
+}
+
 /*************
  CSS BOUTON 
  **************/
