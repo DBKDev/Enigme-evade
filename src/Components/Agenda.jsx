@@ -5,14 +5,17 @@ import '../Styles/agenda.css';
 import testService from '../Services/testService';
 
 function Agenda({ onDateSelect }) {
+  //Selection des jours invalides (créneau déjà utilisé dans la bdd)
   const [invalidDays, setInvalidDays] = useState([]);
 
   useEffect(() => {
     const fetchExcludedDays = async () => {
       try {
+        // Récupérer les données des réservations
         const response = await testService.getAllResa();
         const data = response.data;
-
+        
+        //Si j'ai un tableau en data
         if (Array.isArray(data)) {
           const formattedInvalidDays = data
             .filter(item => {
@@ -43,6 +46,7 @@ function Agenda({ onDateSelect }) {
           const currentDate = new Date('2023-12-11T00:00:00');
           currentDate.setHours(0, 0, 0, 0);
 
+          // Séléctionne les 52 lundis
           for (let i = 0; i < 52; i++) {
             const monday = new Date(currentDate);
             monday.setDate(currentDate.getDate() + (1 + 7 - currentDate.getDay()) % 7);
@@ -58,6 +62,7 @@ function Agenda({ onDateSelect }) {
               disabled: true,
             });
 
+            // +7 pour séléctionner le lundi d'après et ainsi de suite
             currentDate.setDate(currentDate.getDate() + 7);
           }
           console.log(generalInvalidMondays, 'Invalid');
@@ -86,9 +91,9 @@ function Agenda({ onDateSelect }) {
       invalid={invalidDays}
       timeFormat="HH:mm"
       onChange={(event, inst) => {
-        console.log('Datepicker onChange called');
+        //console.log('Datepicker onChange called');
         const selectedDate = inst.getVal();
-        console.log('Selected Date:', selectedDate);
+        //console.log('Selected Date:', selectedDate);
         onDateSelect(selectedDate);
       }}
       placeholderText="Select a weekday"
