@@ -14,7 +14,7 @@ const MiniJeu = () => {
     const hints = [
         'Mon premier chiffre est le nombres de joueurs maximum que peut contenir nos salles', // Indice pour la première énigme
         'Mon deuxième est un nombre qui correspond au temps en minutes de nos sessions d\'escape game ', // Indice pour la deuxième énigme
-        'Mon troisième chiffre est  0' // Indice pour la troisième énigme
+        'Mon troisième chiffre est le numéro de notre rue' // Indice pour la troisième énigme
 ];
 
 
@@ -23,7 +23,7 @@ const MiniJeu = () => {
 
 function checkAnswer () {
 
-            if (reponseNumber === 8900) {
+            if (reponseNumber === 89046) {
                 setAttempts(0); // Réinitialiser les tentatives pour la prochaine énigme
                 setMessage('Bien joué !');
                 
